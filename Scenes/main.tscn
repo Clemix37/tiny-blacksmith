@@ -1,0 +1,128 @@
+[gd_scene load_steps=8 format=3 uid="uid://dswrln6d8x371"]
+
+[ext_resource type="PackedScene" uid="uid://chgybdvqjguat" path="res://Scenes/player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://ch7w4uyko35dd" path="res://Scenes/Shop/shop.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b25k7hyv2ewad" path="res://Scenes/Shop/item_container.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://byr5xg1aws6oj" path="res://Scenes/inventory.tscn" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://lvclurcx5qp2" path="res://Scripts/Customer/customer_spawner.gd" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://bsm604xe8jlun" path="res://Scenes/customer.tscn" id="7_6bp64"]
+[ext_resource type="PackedScene" uid="uid://cxid2xxwn0b06" path="res://Scenes/forge.tscn" id="7_344ge"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(540, 477)
+
+[node name="Shop" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(0, 126)
+
+[node name="ItemContainers" type="Node2D" parent="."]
+
+[node name="WoodContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
+position = Vector2(105, 272)
+name_item = "Wood"
+
+[node name="SteelContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
+position = Vector2(106, 341)
+name_item = "Steel"
+
+[node name="CopperContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
+position = Vector2(105, 404)
+name_item = "Copper"
+
+[node name="IronContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
+position = Vector2(106, 468)
+name_item = "Iron"
+
+[node name="CoalContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
+position = Vector2(104, 532)
+name_item = "Coal"
+
+[node name="Inventory" parent="." instance=ExtResource("5_kry3j")]
+visible = false
+
+[node name="Spawns" type="Node" parent="."]
+
+[node name="CustomerSpawner" type="Node2D" parent="Spawns" node_paths=PackedStringArray("spawnPositions", "counter_positions")]
+visible = false
+script = ExtResource("6_21xkr")
+customer_scene = ExtResource("7_6bp64")
+spawn_position = Vector2(50, -50)
+spawnPositions = [NodePath("../SpawnPoints/SpawnPoint"), NodePath("../SpawnPoints/SpawnPoint2"), NodePath("../SpawnPoints/SpawnPoint3"), NodePath("../SpawnPoints/SpawnPoint4"), NodePath("../SpawnPoints/SpawnPoint5"), NodePath("../SpawnPoints/SpawnPoint6"), NodePath("../SpawnPoints/SpawnPoint7"), NodePath("../SpawnPoints/SpawnPoint8"), NodePath("../SpawnPoints/SpawnPoint9"), NodePath("../SpawnPoints/SpawnPoint10"), NodePath("../SpawnPoints/SpawnPoint11"), NodePath("../SpawnPoints/SpawnPoint12"), NodePath("../SpawnPoints/SpawnPoint13"), NodePath("../SpawnPoints/SpawnPoint14"), NodePath("../SpawnPoints/SpawnPoint15"), NodePath("../SpawnPoints/SpawnPoint16")]
+counter_positions = [NodePath("../CounterTargetPoints/CounterPoint"), NodePath("../CounterTargetPoints/CounterPoint1"), NodePath("../CounterTargetPoints/CounterPoint2"), NodePath("../CounterTargetPoints/CounterPoint3"), NodePath("../CounterTargetPoints/CounterPoint4"), NodePath("../CounterTargetPoints/CounterPoint5"), NodePath("../CounterTargetPoints/CounterPoint6")]
+
+[node name="SpawnPoints" type="Node2D" parent="Spawns"]
+
+[node name="SpawnPoint" type="Marker2D" parent="Spawns/SpawnPoints"]
+position = Vector2(50, -50)
+
+[node name="SpawnPoint2" type="Marker2D" parent="Spawns/SpawnPoints"]
+position = Vector2(100, -50)
+
+[node name="SpawnPoint3" type="Marker2D" parent="Spawns/SpawnPoints"]
+position = Vector2(150, -50)
+
+[node name="SpawnPoint4" type="Marker2D" parent="Spawns/SpawnPoints"]
+position = Vector2(200, -50)
+
+[node name="SpawnPoint5" type="Marker2D" parent="Spawns/SpawnPoints"]
+position = Vector2(250, -50)
+
+[node name="SpawnPoint6" type="Marker2D" parent="Spawns/SpawnPoints"]
+position = Vector2(300, -50)
+
+[node name="SpawnPoint7" type="Marker2D" parent="Spawns/SpawnPoints"]
+position = Vector2(350, -50)
+
+[node name="SpawnPoint8" type="Marker2D" parent="Spawns/SpawnPoints"]
+position = Vector2(400, -50)
+
+[node name="SpawnPoint9" type="Marker2D" parent="Spawns/SpawnPoints"]
+position = Vector2(450, -50)
+
+[node name="SpawnPoint10" type="Marker2D" parent="Spawns/SpawnPoints"]
+position = Vector2(500, -50)
+
+[node name="SpawnPoint11" type="Marker2D" parent="Spawns/SpawnPoints"]
+position = Vector2(550, -50)
+
+[node name="SpawnPoint12" type="Marker2D" parent="Spawns/SpawnPoints"]
+position = Vector2(600, -50)
+
+[node name="SpawnPoint13" type="Marker2D" parent="Spawns/SpawnPoints"]
+position = Vector2(650, -50)
+
+[node name="SpawnPoint14" type="Marker2D" parent="Spawns/SpawnPoints"]
+position = Vector2(700, -50)
+
+[node name="SpawnPoint15" type="Marker2D" parent="Spawns/SpawnPoints"]
+position = Vector2(750, -50)
+
+[node name="SpawnPoint16" type="Marker2D" parent="Spawns/SpawnPoints"]
+position = Vector2(800, -50)
+
+[node name="CounterTargetPoints" type="Node2D" parent="Spawns"]
+
+[node name="CounterPoint" type="Marker2D" parent="Spawns/CounterTargetPoints"]
+position = Vector2(150, 126)
+
+[node name="CounterPoint1" type="Marker2D" parent="Spawns/CounterTargetPoints"]
+position = Vector2(300, 126)
+
+[node name="CounterPoint2" type="Marker2D" parent="Spawns/CounterTargetPoints"]
+position = Vector2(450, 126)
+
+[node name="CounterPoint3" type="Marker2D" parent="Spawns/CounterTargetPoints"]
+position = Vector2(600, 126)
+
+[node name="CounterPoint4" type="Marker2D" parent="Spawns/CounterTargetPoints"]
+position = Vector2(750, 126)
+
+[node name="CounterPoint5" type="Marker2D" parent="Spawns/CounterTargetPoints"]
+position = Vector2(900, 126)
+
+[node name="CounterPoint6" type="Marker2D" parent="Spawns/CounterTargetPoints"]
+position = Vector2(1050, 126)
+
+[node name="Forge" parent="." instance=ExtResource("7_344ge")]
+position = Vector2(848, 278)

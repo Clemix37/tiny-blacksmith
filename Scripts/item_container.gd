@@ -1,0 +1,61 @@
+extends Node2D
+
+@export var name_item: String = "Item name"
+@export var item_quantity: int = 1500
+@export var give_rate: float = 0.5 # Donne 2 items / s
+@export var pickup_effect_scene: PackedScene
+
+@onready var label: Label = $Label
+@onready var areaDetection: Area2D = $PlayerDetection/Area2D
+
+var playerInArea = false
+var playerReference = null
+var giveTimer: float = 0.0
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	_updateLabels()
+	areaDetection.body_entered.connect(_on_body_entered)
+	areaDetection.body_exited.connect(_on_body_exited)
+	
+func _process(delta: float) -> void:
+	# Si le joueur est dans la zone et qu'il reste des items
+	if playerInArea and item_quantity > 0:
+		giveTimer += delta
+		
+		# Donner 1 item toutes les give_rate secondes
+		if giveTimer >= give_rate:
+			give_item_to_player()
+			giveTimer = 0.0
+
+func _updateLabels() -> void:
+	label.text = name_item + " x" + str(item_quantity) + ""
+
+func _remove_item(quantity: int) -> void:
+	item_quantity -= quantity
+	
+func give_item_to_player():
+	# Pas de joueur ou plus de quantité
+	if !playerReference or item_quantity == 0: return
+	playerReference.add_to_inventory(name_item, 1)
+	_remove_item(1)
+	_updateLabels()
+	spawn_pickup_effect()
+
+func _on_body_entered(body):
+	if body.name == "Player" and body.has_method("add_to_inventory"):
+		playerInArea = true
+		giveTimer = 0.0 # Donne immédiatement le premier item
+		playerReference = body
+		give_item_to_player()
+
+func _on_body_exited(body):
+	if body.name == "Player":
+		playerInArea = false
+		giveTimer = 0.0
+		playerReference = null
+
+func spawn_pickup_effect():
+	var effect = pickup_effect_scene.instantiate()
+	effect.global_position = global_position
+	get_tree().current_scene.add_child(effect)

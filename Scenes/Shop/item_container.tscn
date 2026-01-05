@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://b25k7hyv2ewad"]
+
+[ext_resource type="Script" uid="uid://dhkr2t7wb2cjv" path="res://Scripts/item_container.gd" id="1_vffq3"]
+[ext_resource type="PackedScene" uid="uid://1xl0n1g00n85" path="res://Scenes/pickup_effect.tscn" id="2_bkexq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vffq3"]
+radius = 43.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vffq3"]
+size = Vector2(40, 40)
+
+[node name="ItemContainer" type="Node2D"]
+script = ExtResource("1_vffq3")
+pickup_effect_scene = ExtResource("2_bkexq")
+
+[node name="PlayerDetection" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="PlayerDetection"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection/Area2D"]
+visible = false
+position = Vector2(20, 20)
+shape = SubResource("CircleShape2D_vffq3")
+
+[node name="Container" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Container"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.24705882, 0.1882353, 0.11372549, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Container"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Container/StaticBody2D"]
+visible = false
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_vffq3")
+
+[node name="Label" type="Label" parent="."]
+offset_top = -23.0
+offset_right = 40.0
+text = "Item Name"

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch7w4uyko35dd"]
+
+[sub_resource type="GDScript" id="GDScript_cpowt"]
+script/source = "extends Node2D
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viryw"]
+size = Vector2(1152, 30)
+
+[node name="Shop" type="Node2D"]
+script = SubResource("GDScript_cpowt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 30.0
+color = Color(0, 0.77445996, 0.36107746, 1)
+
+[node name="BarArea" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarArea"]
+position = Vector2(576, 15)
+shape = SubResource("RectangleShape2D_viryw")
