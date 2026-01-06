@@ -22,6 +22,7 @@ Todo:
 	[ ] système de commandes avec livraisons par livreurs
 	[ ] nouvel écran de jeu: gestion de l'inventaire, rangement des resources
 	[ ] faire en sorte d'afficher les recettes sur la listeR
+	[ ] voir si possible de faire coffre de stockage d'items en avances
 	[ ] XX
 	[ ] XX
 	[ ] XX

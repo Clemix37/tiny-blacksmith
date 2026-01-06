@@ -58,7 +58,16 @@ func close_forge_ui():
 	selected_recipe = null
 
 func _on_forge_btn_pressed():
-	pass
+	if selected_recipe == null or !selected_recipe.can_craft():
+		return
+	for item_index in selected_recipe.requirements.keys():
+		var item_type: String = Data.ResourcesNameArray[item_index]
+		var quantity: int = selected_recipe.requirements[item_index]
+		InventoryManager.remove_item(item_type, quantity)
+	InventoryManager.add_item(selected_recipe.name, 1)
+	selected_recipe = null
+	update_recipe_availability()
+	update_selected_recipe_display()
 	
 func _on_close_btn_pressed():
 	close_forge_ui()
@@ -103,8 +112,9 @@ func update_selected_recipe_display():
 	var requirements_text = "Nécessite:\n"
 	var can_craft = selected_recipe.can_craft()
 	
-	for item_type in selected_recipe.requirements.keys():
-		var required_qty = selected_recipe.requirements[item_type]
+	for item_index in selected_recipe.requirements.keys():
+		var item_type: String = Data.ResourcesNameArray[item_index]
+		var required_qty = selected_recipe.requirements[item_index]
 		var available_qty = InventoryManager.get_item_count(item_type)
 		
 		var item_name = RecipeManager.format_item_name(item_type)

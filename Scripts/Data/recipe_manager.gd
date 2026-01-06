@@ -21,8 +21,10 @@ class Recipe:
 	
 	# Vérifier si le joueur a les ressources nécessaires
 	func can_craft() -> bool:
-		for item_type in requirements.keys():
-			var required_qty = requirements[item_type]
+		for item_index in requirements.keys():
+			var item_type: String = Data.ResourcesNameArray[item_index]
+			var required_qty = requirements[item_index]
+			print(item_type)
 			if not InventoryManager.has_item(item_type, required_qty):
 				return false
 		return true

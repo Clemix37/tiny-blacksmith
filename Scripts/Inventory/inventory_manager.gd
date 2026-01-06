@@ -23,3 +23,6 @@ func remove_item(type: String, quantity: int) -> void:
 	if inventory[type] == 0:
 		inventory.erase(type)
 	emit_signal("inventory_updated", inventory)
+
+func get_item_count(item_type: String):
+	return inventory.get(item_type) if has_item(item_type, 0) else 0
