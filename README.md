@@ -23,6 +23,7 @@ Todo:
 	[ ] nouvel écran de jeu: gestion de l'inventaire, rangement des resources
 	[ ] faire en sorte d'afficher les recettes sur la listeR
 	[ ] voir si possible de faire coffre de stockage d'items en avances
-	[ ] XX
-	[ ] XX
-	[ ] XX
+	[ ] faire en sorte que les clients demandes des recettes plutot que des resources (les deux ?)
+	[X] écran de menu du jeu
+	[ ] ne pas pouvoir passer à travers la forge en orange
+	[ ] corriger problème de fullscreen dont comptoir pas fullscreen

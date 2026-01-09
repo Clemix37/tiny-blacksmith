@@ -17,7 +17,10 @@ func _ready():
 func _process(_delta):
 	# Optionnel: touche pour ouvrir/fermer l'inventaire
 	if Input.is_action_just_pressed("inventory"):
-		visible = !visible
+		toggle_inventory_display()
+
+func toggle_inventory_display():
+	visible = !visible
 
 func _on_inventory_updated(inventory: Dictionary):
 	update_inventory_display(inventory)
