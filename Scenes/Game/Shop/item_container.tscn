@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b25k7hyv2ewad"]
 
 [ext_resource type="Script" uid="uid://dhkr2t7wb2cjv" path="res://Scripts/item_container.gd" id="1_vffq3"]
-[ext_resource type="PackedScene" uid="uid://1xl0n1g00n85" path="res://Scenes/pickup_effect.tscn" id="2_bkexq"]
+[ext_resource type="PackedScene" uid="uid://1xl0n1g00n85" path="res://Scenes/Effects/pickup_effect.tscn" id="2_bkexq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vffq3"]
 radius = 43.0

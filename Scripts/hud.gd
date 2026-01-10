@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 func _on_delivery_btn_pressed():
-	get_tree().change_scene_to_file("res://Scenes/delivery_scene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Delivery/delivery_scene.tscn")
 
 func _on_menu_btn_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Menu/game_menu.tscn")
