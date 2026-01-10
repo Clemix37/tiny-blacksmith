@@ -7,7 +7,71 @@ script = ExtResource("1_hl8t3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="BackBtn" type="Button" parent="CanvasLayer"]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="BackBtn" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
 text = "GO BACK"
+
+[node name="OrderBtn" type="Button" parent="."]
+offset_left = 936.0
+offset_top = 72.0
+offset_right = 1063.0
+offset_bottom = 160.0
+text = "ORDER"
+
+[node name="Storage" type="Node" parent="."]
+
+[node name="IronStorage" type="Node" parent="Storage"]
+
+[node name="IronContainer" type="PanelContainer" parent="Storage/IronStorage"]
+offset_left = 99.0
+offset_top = 72.0
+offset_right = 255.0
+offset_bottom = 178.0
+
+[node name="IronStorageLabel" type="Label" parent="Storage/IronStorage"]
+offset_left = 148.0
+offset_top = 151.0
+offset_right = 189.0
+offset_bottom = 174.0
+text = "IRON"
+
+[node name="NbIronStorageLabel" type="Label" parent="Storage/IronStorage"]
+offset_left = 146.0
+offset_top = 179.0
+offset_right = 187.0
+offset_bottom = 202.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="WoodStorage" type="Node" parent="Storage"]
+
+[node name="WoodContainer" type="PanelContainer" parent="Storage/WoodStorage"]
+offset_left = 293.0
+offset_top = 72.0
+offset_right = 451.0
+offset_bottom = 182.0
+
+[node name="WoodStorageLabel" type="Label" parent="Storage/WoodStorage"]
+offset_left = 346.0
+offset_top = 155.0
+offset_right = 399.0
+offset_bottom = 178.0
+text = "WOOD"
+
+[node name="NbWoodStorageLabel" type="Label" parent="Storage/WoodStorage"]
+offset_left = 351.0
+offset_top = 180.0
+offset_right = 392.0
+offset_bottom = 203.0
+text = "0"
+horizontal_alignment = 1

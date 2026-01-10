@@ -1,7 +1,8 @@
 extends Node2D
 
-@onready var play_btn: Button = $UI/HBoxContainer/VBoxContainer/PlayBtn
-@onready var options_btn: Button = $UI/HBoxContainer/VBoxContainer/OptionsBtn
+@onready var play_btn: Button = $UI/HBoxContainer/MarginContainer/VBoxContainer/PlayBtn
+@onready var options_btn: Button = $UI/HBoxContainer/MarginContainer/VBoxContainer/OptionsBtn
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
