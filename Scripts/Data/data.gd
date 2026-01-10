@@ -6,6 +6,14 @@ enum ResourcesName { WOOD, COAL, COPPER, IRON, STEEL }
 
 var ResourcesNameArray = ["Wood", "Coal", "Copper", "Iron", "Steel"]
 
+var ResourcesPrices = {
+	ResourcesName.WOOD: 1,
+	ResourcesName.COAL: 2,
+	ResourcesName.COPPER: 3,
+	ResourcesName.IRON: 5,
+	ResourcesName.STEEL: 10,
+}
+
 var weapon_prices = {
 	WeaponType.SWORD: 10,
 	WeaponType.DAGGER: 6,

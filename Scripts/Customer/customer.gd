@@ -18,6 +18,7 @@ var customer_sprites = [
 var possible_items = Data.ResourcesNameArray
 var requested_item: String = ""
 var requested_quantity: int = 1
+var reward: int = 0
 
 # État du client
 enum State { WALKING_TO_COUNTER, WAITING, LEAVING, SERVED }
@@ -73,9 +74,10 @@ func generate_request():
 	# Choisir un item aléatoire
 	requested_item = possible_items[randi() % possible_items.size()]
 	requested_quantity = randi_range(1, 5)
+	reward = _calculate_reward()
 	wait_time = Data.TimePerItemToCraft * requested_quantity + Data.TimePerBuild
 	
-	label.text = requested_item.capitalize() + " x" + str(requested_quantity)
+	label.text = requested_item.capitalize() + " x" + str(requested_quantity) + " (+" + str(reward) + "$)"
 
 func _physics_process(delta):
 	match current_state:
@@ -140,8 +142,7 @@ func serve_customer() -> bool:
 		
 		emit_signal("customer_served", requested_item, requested_quantity)
 		
-		# Optionnel: donner de l'argent au joueur
-		# GameManager.add_money(requested_quantity * 10)
+		InventoryManager.add_money(reward)
 		
 		return true
 	else:
@@ -181,3 +182,9 @@ func _update_timer_label() -> void:
 func _toggle_labels_visibility(visible: bool) -> void:
 	label.visible = visible
 	timerLabel.visible = visible
+
+func _calculate_reward() -> int:
+	var indexOfResource: int = Data.ResourcesNameArray.find(requested_item, 0)
+	if indexOfResource == -1: return 0
+	var pricePerResource: int = Data.ResourcesPrices[indexOfResource]
+	return pricePerResource * requested_quantity
