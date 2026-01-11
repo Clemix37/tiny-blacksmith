@@ -30,3 +30,5 @@ Todo:
 	[X] Bug quand je suis dans l'écran de forge je ne peux pas saisir quoi que ce soit, ni scroll (le bug vient du fait que le HUD était de type CanvasLayer, mais un seul ne peut exister, il prend la main sur le second)  
 	[X] Système d'argent ajouté et affiché  
 	[ ] Quand je joue, je gagne de l'argent mais quand je clique sur le menu je perds mon argent alors que mon inventaire est gardé...  
+	[ ] Le compte à rebours des clients est un entier mais affiche la virgule
+	[ ] Réduire un peu la taille des clients ?

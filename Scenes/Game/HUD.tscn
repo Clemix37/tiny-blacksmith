@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7sb48vkewfgu"]
 
 [ext_resource type="Script" uid="uid://2wi6qqyspqdk" path="res://Scripts/hud.gd" id="1_sd512"]
-[ext_resource type="Texture2D" uid="uid://d0ru3wqi6jhwh" path="res://Assets/Icons/on-off.svg" id="2_g5exq"]
+[ext_resource type="Texture2D" uid="uid://u7luj6v2djx8" path="res://Assets/Icons/power.png" id="2_g5exq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pq2x5"]
 font_size = 20

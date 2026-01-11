@@ -97,3 +97,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_rfxrv")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ke5np")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ke5np")
 text = "OPTIONS"
+
+[node name="QuitGameBtn" type="Button" parent="UI/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "QUIT GAME"
+flat = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0ru3wqi6jhwh"
-path="res://.godot/imported/on-off.svg-61f9975550d4786b66b2a016af5caab3.ctex"
+uid="uid://ct1yk8t11yac2"
+path="res://.godot/imported/tile_0063.png-4c7d8e318603687e77d9d36ff04742bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/on-off.svg"
-dest_files=["res://.godot/imported/on-off.svg-61f9975550d4786b66b2a016af5caab3.ctex"]
+source_file="res://Assets/Icons/tile_0063.png"
+dest_files=["res://.godot/imported/tile_0063.png-4c7d8e318603687e77d9d36ff04742bc.ctex"]
 
 [params]
 
@@ -36,8 +36,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=32
+process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
