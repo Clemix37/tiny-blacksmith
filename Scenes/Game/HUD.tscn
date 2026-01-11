@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7sb48vkewfgu"]
+[gd_scene load_steps=4 format=3 uid="uid://b7sb48vkewfgu"]
 
 [ext_resource type="Script" uid="uid://2wi6qqyspqdk" path="res://Scripts/hud.gd" id="1_sd512"]
+[ext_resource type="Texture2D" uid="uid://d0ru3wqi6jhwh" path="res://Assets/Icons/on-off.svg" id="2_g5exq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pq2x5"]
 font_size = 20
@@ -54,3 +55,9 @@ text = "MENU"
 [node name="DeliveryBtn" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Delivery"
+
+[node name="QuitBtn" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_g5exq")
+flat = true
+icon_alignment = 1

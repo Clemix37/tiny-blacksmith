@@ -1,13 +1,39 @@
-[gd_scene load_steps=9 format=3 uid="uid://dswrln6d8x371"]
+[gd_scene load_steps=15 format=3 uid="uid://dswrln6d8x371"]
 
 [ext_resource type="PackedScene" uid="uid://chgybdvqjguat" path="res://Scenes/Characters/player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://ch7w4uyko35dd" path="res://Scenes/Game/Shop/shop.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://b25k7hyv2ewad" path="res://Scenes/Game/Shop/item_container.tscn" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://04v11heeij0i" path="res://Resources/item_container_resource.gd" id="4_veifj"]
 [ext_resource type="PackedScene" uid="uid://byr5xg1aws6oj" path="res://Scenes/Game/inventory.tscn" id="5_kry3j"]
 [ext_resource type="Script" uid="uid://lvclurcx5qp2" path="res://Scripts/Customer/customer_spawner.gd" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://bsm604xe8jlun" path="res://Scenes/Characters/customer.tscn" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cxid2xxwn0b06" path="res://Scenes/Game/forge.tscn" id="7_344ge"]
 [ext_resource type="PackedScene" uid="uid://b7sb48vkewfgu" path="res://Scenes/Game/HUD.tscn" id="8_344ge"]
+
+[sub_resource type="Resource" id="Resource_wnnnj"]
+script = ExtResource("4_veifj")
+item_name = "Wood"
+metadata/_custom_type_script = "uid://04v11heeij0i"
+
+[sub_resource type="Resource" id="Resource_veifj"]
+script = ExtResource("4_veifj")
+item_name = "Steel"
+metadata/_custom_type_script = "uid://04v11heeij0i"
+
+[sub_resource type="Resource" id="Resource_5fdju"]
+script = ExtResource("4_veifj")
+item_name = "Copper"
+metadata/_custom_type_script = "uid://04v11heeij0i"
+
+[sub_resource type="Resource" id="Resource_sw6w7"]
+script = ExtResource("4_veifj")
+item_name = "Iron"
+metadata/_custom_type_script = "uid://04v11heeij0i"
+
+[sub_resource type="Resource" id="Resource_cwscw"]
+script = ExtResource("4_veifj")
+item_name = "Coal"
+metadata/_custom_type_script = "uid://04v11heeij0i"
 
 [node name="Main" type="Node2D"]
 
@@ -21,23 +47,23 @@ position = Vector2(0, 126)
 
 [node name="WoodContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
 position = Vector2(105, 272)
-name_item = "Wood"
+item_container = SubResource("Resource_wnnnj")
 
 [node name="SteelContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
 position = Vector2(106, 341)
-name_item = "Steel"
+item_container = SubResource("Resource_veifj")
 
 [node name="CopperContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
 position = Vector2(105, 404)
-name_item = "Copper"
+item_container = SubResource("Resource_5fdju")
 
 [node name="IronContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
 position = Vector2(106, 468)
-name_item = "Iron"
+item_container = SubResource("Resource_sw6w7")
 
 [node name="CoalContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
 position = Vector2(104, 532)
-name_item = "Coal"
+item_container = SubResource("Resource_cwscw")
 
 [node name="Inventory" parent="." instance=ExtResource("5_kry3j")]
 visible = false
