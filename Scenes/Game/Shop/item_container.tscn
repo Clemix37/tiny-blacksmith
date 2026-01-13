@@ -1,47 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b25k7hyv2ewad"]
+[gd_scene load_steps=5 format=3 uid="uid://b25k7hyv2ewad"]
 
 [ext_resource type="Script" uid="uid://dhkr2t7wb2cjv" path="res://Scripts/item_container.gd" id="1_vffq3"]
 [ext_resource type="PackedScene" uid="uid://1xl0n1g00n85" path="res://Scenes/Effects/pickup_effect.tscn" id="2_bkexq"]
-[ext_resource type="Texture2D" uid="uid://byg0x61aokh4g" path="res://Assets/Chest/tile_0091.png" id="4_ojrn3"]
-[ext_resource type="Texture2D" uid="uid://dl05alnoatrrc" path="res://Assets/Chest/tile_0090.png" id="5_pn16p"]
-[ext_resource type="Texture2D" uid="uid://nr6jnjlc8ifw" path="res://Assets/Chest/tile_0089.png" id="6_4kqph"]
+[ext_resource type="PackedScene" uid="uid://b8wb5kremkns0" path="res://Scenes/Prefabs/chest.tscn" id="6_ojrn3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vffq3"]
 radius = 43.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wirx0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_ojrn3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_pn16p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_4kqph")
-}],
-"loop": false,
-"name": &"chest_closing",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_4kqph")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_pn16p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_ojrn3")
-}],
-"loop": false,
-"name": &"chest_opening",
-"speed": 10.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vffq3"]
-size = Vector2(40, 40)
 
 [node name="ItemContainer" type="Node2D"]
 script = ExtResource("1_vffq3")
@@ -55,20 +19,8 @@ pickup_effect_scene = ExtResource("2_bkexq")
 position = Vector2(20, 20)
 shape = SubResource("CircleShape2D_vffq3")
 
-[node name="Container" type="Node2D" parent="."]
-
-[node name="ChestAnimation" type="AnimatedSprite2D" parent="Container"]
+[node name="Chest" parent="." instance=ExtResource("6_ojrn3")]
 position = Vector2(20, 20)
-scale = Vector2(2.5, 2.5)
-sprite_frames = SubResource("SpriteFrames_wirx0")
-animation = &"chest_opening"
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Container"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Container/StaticBody2D"]
-visible = false
-position = Vector2(20, 20)
-shape = SubResource("RectangleShape2D_vffq3")
 
 [node name="Label" type="Label" parent="."]
 offset_top = -23.0

@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8wb5kremkns0"]
+
+[ext_resource type="Texture2D" uid="uid://nr6jnjlc8ifw" path="res://Assets/Chest/tile_0089.png" id="1_4awgj"]
+[ext_resource type="Script" uid="uid://bg48v3pvi145x" path="res://Scripts/Prefabs/chest.gd" id="1_gnwiu"]
+[ext_resource type="Texture2D" uid="uid://dl05alnoatrrc" path="res://Assets/Chest/tile_0090.png" id="2_gnwiu"]
+[ext_resource type="Texture2D" uid="uid://byg0x61aokh4g" path="res://Assets/Chest/tile_0091.png" id="3_hts7t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8mu65"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hts7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gnwiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_4awgj")
+}],
+"loop": false,
+"name": &"chest_closing",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4awgj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gnwiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hts7t")
+}],
+"loop": false,
+"name": &"chest_opening",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4awgj"]
+size = Vector2(40, 40)
+
+[node name="Chest" type="Node2D"]
+script = ExtResource("1_gnwiu")
+
+[node name="ChestAnimation" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_8mu65")
+animation = &"chest_opening"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_4awgj")

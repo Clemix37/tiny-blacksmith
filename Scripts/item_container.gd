@@ -5,6 +5,7 @@ extends Node2D
 @onready var label: Label = $Label
 @onready var areaDetection: Area2D = $PlayerDetection/Area2D
 @onready var chest_animation: AnimatedSprite2D = $Container/ChestAnimation
+@onready var chest: Node2D = $Chest
 
 var playerInArea = false
 var playerReference = null
@@ -39,7 +40,7 @@ func give_item_to_player():
 
 func _on_body_entered(body):
 	if body.name == "Player" and body.has_method("add_to_inventory"):
-		chest_animation.play("chest_opening")
+		_open_container()
 		playerInArea = true
 		giveTimer = 0.0 # Donne immédiatement le premier item
 		playerReference = body
@@ -47,7 +48,7 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	if body.name == "Player":
-		chest_animation.play("chest_closing")
+		_close_container()
 		playerInArea = false
 		giveTimer = 0.0
 		playerReference = null
@@ -56,3 +57,9 @@ func spawn_pickup_effect():
 	var effect = pickup_effect_scene.instantiate()
 	effect.global_position = global_position
 	get_tree().current_scene.add_child(effect)
+
+func _open_container():
+	chest.open()
+
+func _close_container():
+	chest.close()
