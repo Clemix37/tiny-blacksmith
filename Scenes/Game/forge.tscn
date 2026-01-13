@@ -46,6 +46,7 @@ offset_bottom = 132.0
 text = "Press [E] to interact"
 
 [node name="UI" type="CanvasLayer" parent="."]
+layer = 3
 
 [node name="ForgePanel" type="Panel" parent="UI"]
 anchors_preset = 8
