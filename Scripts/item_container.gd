@@ -4,6 +4,7 @@ extends Node2D
 @export var item_container: ItemContainerResource
 @onready var label: Label = $Label
 @onready var areaDetection: Area2D = $PlayerDetection/Area2D
+@onready var chest_animation: AnimatedSprite2D = $Container/ChestAnimation
 
 var playerInArea = false
 var playerReference = null
@@ -38,6 +39,7 @@ func give_item_to_player():
 
 func _on_body_entered(body):
 	if body.name == "Player" and body.has_method("add_to_inventory"):
+		chest_animation.play("chest_opening")
 		playerInArea = true
 		giveTimer = 0.0 # Donne immédiatement le premier item
 		playerReference = body
@@ -45,6 +47,7 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	if body.name == "Player":
+		chest_animation.play("chest_closing")
 		playerInArea = false
 		giveTimer = 0.0
 		playerReference = null

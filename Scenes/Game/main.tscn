@@ -39,7 +39,7 @@ metadata/_custom_type_script = "uid://04v11heeij0i"
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(540, 477)
+position = Vector2(577, 269)
 
 [node name="Shop" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(0, 126)
@@ -47,23 +47,23 @@ position = Vector2(0, 126)
 [node name="ItemContainers" type="Node2D" parent="."]
 
 [node name="WoodContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
-position = Vector2(105, 272)
+position = Vector2(-165, 544)
 item_container = SubResource("Resource_wnnnj")
 
 [node name="SteelContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
-position = Vector2(106, 341)
+position = Vector2(-1, 544)
 item_container = SubResource("Resource_veifj")
 
 [node name="CopperContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
-position = Vector2(105, 404)
+position = Vector2(164, 544)
 item_container = SubResource("Resource_5fdju")
 
 [node name="IronContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
-position = Vector2(106, 468)
+position = Vector2(329, 544)
 item_container = SubResource("Resource_sw6w7")
 
 [node name="CoalContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
-position = Vector2(104, 532)
+position = Vector2(494, 544)
 item_container = SubResource("Resource_cwscw")
 
 [node name="Inventory" parent="." instance=ExtResource("5_kry3j")]
@@ -82,52 +82,52 @@ counter_positions = [NodePath("../CounterTargetPoints/CounterPoint"), NodePath("
 [node name="SpawnPoints" type="Node2D" parent="Spawns"]
 
 [node name="SpawnPoint" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(50, -50)
+position = Vector2(106, -260)
 
 [node name="SpawnPoint2" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(100, -50)
+position = Vector2(156, -260)
 
 [node name="SpawnPoint3" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(150, -50)
+position = Vector2(206, -260)
 
 [node name="SpawnPoint4" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(200, -50)
+position = Vector2(256, -260)
 
 [node name="SpawnPoint5" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(250, -50)
+position = Vector2(306, -260)
 
 [node name="SpawnPoint6" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(300, -50)
+position = Vector2(356, -260)
 
 [node name="SpawnPoint7" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(350, -50)
+position = Vector2(406, -260)
 
 [node name="SpawnPoint8" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(400, -50)
+position = Vector2(456, -260)
 
 [node name="SpawnPoint9" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(450, -50)
+position = Vector2(506, -260)
 
 [node name="SpawnPoint10" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(500, -50)
+position = Vector2(556, -260)
 
 [node name="SpawnPoint11" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(550, -50)
+position = Vector2(606, -260)
 
 [node name="SpawnPoint12" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(600, -50)
+position = Vector2(656, -260)
 
 [node name="SpawnPoint13" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(650, -50)
+position = Vector2(706, -260)
 
 [node name="SpawnPoint14" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(700, -50)
+position = Vector2(756, -260)
 
 [node name="SpawnPoint15" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(750, -50)
+position = Vector2(806, -260)
 
 [node name="SpawnPoint16" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(800, -50)
+position = Vector2(856, -260)
 
 [node name="CounterTargetPoints" type="Node2D" parent="Spawns"]
 
@@ -153,8 +153,8 @@ position = Vector2(900, 126)
 position = Vector2(1050, 126)
 
 [node name="Forge" parent="." instance=ExtResource("7_344ge")]
-position = Vector2(852, 278)
+position = Vector2(829, 278)
 
 [node name="UI" parent="." instance=ExtResource("8_344ge")]
 
-[node name="Walls" parent="." instance=ExtResource("10_wnnnj")]
+[node name="WallsWorld" parent="." instance=ExtResource("10_wnnnj")]

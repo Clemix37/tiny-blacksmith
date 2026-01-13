@@ -30,7 +30,7 @@ func get_item_count(item_type: String):
 	return inventory.get(item_type) if has_item(item_type, 0) else 0
 
 func add_money(money_to_add: int) -> void:
-	money += money_to_add
+	money+= money_to_add
 	money_updated.emit()
 
 func remove_money(money_to_remove: int) -> void:

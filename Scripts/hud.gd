@@ -12,6 +12,7 @@ func _ready() -> void:
 	quit_btn.pressed.connect(_quit_game)
 	if InventoryManager.has_signal("money_updated"):
 		InventoryManager.money_updated.connect(_update_money_label)
+	_update_money_label()
 
 
 func _on_delivery_btn_pressed():
@@ -21,7 +22,7 @@ func _on_menu_btn_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Menu/game_menu.tscn")
 
 func _update_money_label():
-	money_label.text = str(InventoryManager.money) + "$"
+	money_label.text = str(InventoryManager.get_money()) + "$"
 
 func _quit_game():
 	get_tree().quit()

@@ -28,11 +28,12 @@ Todo
 - [ ] système de commandes avec livraisons par livreurs
 - [ ] nouvel écran de jeu: gestion de l'inventaire, rangement des resources
 - [X] faire en sorte d'afficher les recettes sur la liste
-- [ ] voir si possible de faire coffre de stockage d'items en avances
+- [X] voir si possible de faire coffre de stockage d'items en avances
 - [ ] faire en sorte que les clients demandes des recettes plutot que des resources (les deux ?)
 - [x] écran de menu du jeu
 - [X] ne pas pouvoir passer à travers la forge en orange (problème de layer et de mask)
 - [X] corriger problème de fullscreen dont comptoir pas fullscreen
 - [x] Bug quand je suis dans l'écran de forge je ne peux pas saisir quoi que ce soit, ni scroll (le bug vient du fait que le HUD était de type CanvasLayer, mais un seul ne peut exister, il prend la main sur le second)
 - [x] Système d'argent ajouté et affiché
-- [ ] Quand je joue, je gagne de l'argent mais quand je clique sur le menu je perds mon argent alors que mon inventaire est gardé...
+- [X] Quand je joue, je gagne de l'argent mais quand je clique sur le menu je perds mon argent alors que mon inventaire est gardé... (juste oubli d'affichage de l'argent)  
+- [X] animation du coffre ouvrant + fermant

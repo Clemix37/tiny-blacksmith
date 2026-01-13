@@ -176,7 +176,7 @@ func _on_body_entered(body) -> void:
 
 # Mets à jour l'affichage du compteur
 func _update_timer_label() -> void:
-	timerLabel.text = str(roundf(wait_timer))
+	timerLabel.text = str(roundi(wait_timer)) + "s"
 
 # 
 func _toggle_labels_visibility(visible: bool) -> void:
