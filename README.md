@@ -31,7 +31,7 @@ Todo
 - [ ] voir si possible de faire coffre de stockage d'items en avances
 - [ ] faire en sorte que les clients demandes des recettes plutot que des resources (les deux ?)
 - [x] écran de menu du jeu
-- [ ] ne pas pouvoir passer à travers la forge en orange
+- [X] ne pas pouvoir passer à travers la forge en orange (problème de layer et de mask)
 - [X] corriger problème de fullscreen dont comptoir pas fullscreen
 - [x] Bug quand je suis dans l'écran de forge je ne peux pas saisir quoi que ce soit, ni scroll (le bug vient du fait que le HUD était de type CanvasLayer, mais un seul ne peut exister, il prend la main sur le second)
 - [x] Système d'argent ajouté et affiché

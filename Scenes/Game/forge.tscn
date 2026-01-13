@@ -17,7 +17,6 @@ offset_bottom = 250.0
 color = Color(0.24115604, 0.24115604, 0.24115604, 1)
 
 [node name="WorkStation" type="StaticBody2D" parent="."]
-collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorkStation"]
 position = Vector2(225, 123)
