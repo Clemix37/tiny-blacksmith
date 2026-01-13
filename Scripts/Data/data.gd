@@ -1,10 +1,16 @@
 extends Node
 
-enum WeaponType { SWORD, DAGGER, AXE }
-
 enum ResourcesName { WOOD, COAL, COPPER, IRON, STEEL }
 
 var ResourcesNameArray = ["Wood", "Coal", "Copper", "Iron", "Steel"]
+
+var ResourcesIdsArray := [
+	"wood",
+	"coal",
+	"copper",
+	"iron",
+	"steel",
+]
 
 var ResourcesPrices = {
 	ResourcesName.WOOD: 1,
@@ -12,12 +18,6 @@ var ResourcesPrices = {
 	ResourcesName.COPPER: 3,
 	ResourcesName.IRON: 5,
 	ResourcesName.STEEL: 10,
-}
-
-var weapon_prices = {
-	WeaponType.SWORD: 10,
-	WeaponType.DAGGER: 6,
-	WeaponType.AXE: 15,
 }
 
 var TimePerItemToCraft = 4

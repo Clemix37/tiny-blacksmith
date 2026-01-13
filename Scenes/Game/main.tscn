@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://dswrln6d8x371"]
+[gd_scene load_steps=22 format=3 uid="uid://dswrln6d8x371"]
 
 [ext_resource type="PackedScene" uid="uid://chgybdvqjguat" path="res://Scenes/Characters/player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://ch7w4uyko35dd" path="res://Scenes/Game/Shop/shop.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://b6qsjr2ec6rrw" path="res://Resources/GameResource/game_resource.gd" id="4_5fdju"]
 [ext_resource type="PackedScene" uid="uid://b25k7hyv2ewad" path="res://Scenes/Game/Shop/item_container.tscn" id="4_jjvhh"]
-[ext_resource type="Script" uid="uid://04v11heeij0i" path="res://Resources/item_container_resource.gd" id="4_veifj"]
+[ext_resource type="Script" uid="uid://04v11heeij0i" path="res://Resources/ItemContainer/item_container_resource.gd" id="4_veifj"]
 [ext_resource type="PackedScene" uid="uid://byr5xg1aws6oj" path="res://Scenes/Game/inventory.tscn" id="5_kry3j"]
 [ext_resource type="Script" uid="uid://lvclurcx5qp2" path="res://Scripts/Customer/customer_spawner.gd" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://bsm604xe8jlun" path="res://Scenes/Characters/customer.tscn" id="7_6bp64"]
@@ -11,29 +12,59 @@
 [ext_resource type="PackedScene" uid="uid://b7sb48vkewfgu" path="res://Scenes/Game/HUD.tscn" id="8_344ge"]
 [ext_resource type="PackedScene" uid="uid://eskxblvrckro" path="res://Scenes/Game/walls.tscn" id="10_wnnnj"]
 
+[sub_resource type="Resource" id="Resource_xqoiw"]
+script = ExtResource("4_5fdju")
+id = "wood"
+name = "Wood"
+metadata/_custom_type_script = "uid://b6qsjr2ec6rrw"
+
 [sub_resource type="Resource" id="Resource_wnnnj"]
 script = ExtResource("4_veifj")
-item_name = "Wood"
+game_resource = SubResource("Resource_xqoiw")
 metadata/_custom_type_script = "uid://04v11heeij0i"
+
+[sub_resource type="Resource" id="Resource_yyavk"]
+script = ExtResource("4_5fdju")
+id = "steel"
+name = "Steel"
+metadata/_custom_type_script = "uid://b6qsjr2ec6rrw"
 
 [sub_resource type="Resource" id="Resource_veifj"]
 script = ExtResource("4_veifj")
-item_name = "Steel"
+game_resource = SubResource("Resource_yyavk")
 metadata/_custom_type_script = "uid://04v11heeij0i"
+
+[sub_resource type="Resource" id="Resource_wipx2"]
+script = ExtResource("4_5fdju")
+id = "copper"
+name = "Copper"
+metadata/_custom_type_script = "uid://b6qsjr2ec6rrw"
 
 [sub_resource type="Resource" id="Resource_5fdju"]
 script = ExtResource("4_veifj")
-item_name = "Copper"
+game_resource = SubResource("Resource_wipx2")
 metadata/_custom_type_script = "uid://04v11heeij0i"
+
+[sub_resource type="Resource" id="Resource_nq4jv"]
+script = ExtResource("4_5fdju")
+id = "iron"
+name = "Iron"
+metadata/_custom_type_script = "uid://b6qsjr2ec6rrw"
 
 [sub_resource type="Resource" id="Resource_sw6w7"]
 script = ExtResource("4_veifj")
-item_name = "Iron"
+game_resource = SubResource("Resource_nq4jv")
 metadata/_custom_type_script = "uid://04v11heeij0i"
+
+[sub_resource type="Resource" id="Resource_1hyuf"]
+script = ExtResource("4_5fdju")
+id = "coal"
+name = "Coal"
+metadata/_custom_type_script = "uid://b6qsjr2ec6rrw"
 
 [sub_resource type="Resource" id="Resource_cwscw"]
 script = ExtResource("4_veifj")
-item_name = "Coal"
+game_resource = SubResource("Resource_1hyuf")
 metadata/_custom_type_script = "uid://04v11heeij0i"
 
 [node name="Main" type="Node2D"]

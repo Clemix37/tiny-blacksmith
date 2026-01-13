@@ -1,30 +1,25 @@
 extends Node
 
 # Classe pour définir une recette
-class Recipe:
-	var id: String  # Identifiant unique
-	var name: String  # Nom affiché
+class Recipe extends GameResource:
 	var result_item: String  # Item produit
 	var result_quantity: int  # Quantité produite
-	var requirements: Dictionary  # {item_type: quantity}
-	var category: String  # Catégorie (optionnel)
-	var unlock_level: int  # Niveau requis (optionnel)
+	var requirements: Dictionary  # {item_id: quantity}
+	var reward: int # Argent de récompense
 	
-	func _init(p_id: String, p_name: String, p_result: String, p_quantity: int, p_requirements: Dictionary, p_category: String = "general", p_level: int = 0):
+	func _init(p_id: String, p_name: String, p_result: String, p_quantity: int, p_requirements: Dictionary, p_reward: int):
 		id = p_id
 		name = p_name
 		result_item = p_result
 		result_quantity = p_quantity
 		requirements = p_requirements
-		category = p_category
-		unlock_level = p_level
+		reward = p_reward
 	
 	# Vérifier si le joueur a les ressources nécessaires
 	func can_craft() -> bool:
 		for item_index in requirements.keys():
-			var item_type: String = Data.ResourcesNameArray[item_index]
+			var item_type: String = Data.ResourcesIdsArray[item_index]
 			var required_qty = requirements[item_index]
-			print(item_type)
 			if not InventoryManager.has_item(item_type, required_qty):
 				return false
 		return true
@@ -56,8 +51,7 @@ func _initialize_recipes():
 		"wooden_axe",  # Item produit
 		1,  # Quantité
 		{Data.ResourcesName.WOOD: 5},  # Ressources nécessaires
-		"tools",  # Catégorie
-		0  # Niveau requis
+		10,
 	))
 	
 	# Catégorie: Outils en fer
@@ -67,8 +61,7 @@ func _initialize_recipes():
 		"iron_axe",
 		1,
 		{Data.ResourcesName.WOOD: 2, Data.ResourcesName.IRON: 3},
-		"tools",
-		1
+		15,
 	))
 	
 	# Exemples d'autres recettes (à compléter)
@@ -78,8 +71,7 @@ func _initialize_recipes():
 		"wooden_pickaxe",
 		1,
 		{Data.ResourcesName.WOOD: 6},
-		"tools",
-		0
+		12,
 	))
 	
 	add_recipe(Recipe.new(
@@ -88,8 +80,7 @@ func _initialize_recipes():
 		"iron_pickaxe",
 		1,
 		{Data.ResourcesName.WOOD: 2, Data.ResourcesName.IRON: 4},
-		"tools",
-		1
+		20,
 	))
 	
 	add_recipe(Recipe.new(
@@ -98,8 +89,7 @@ func _initialize_recipes():
 		"iron_sword",
 		1,
 		{Data.ResourcesName.WOOD: 1, Data.ResourcesName.IRON: 3},
-		"weapons",
-		1
+		25,
 	))
 	
 	add_recipe(Recipe.new(
@@ -108,8 +98,7 @@ func _initialize_recipes():
 		"steel_sword",
 		1,
 		{Data.ResourcesName.WOOD: 1, Data.ResourcesName.STEEL: 3},
-		"weapons",
-		2
+		30,
 	))
 	
 	add_recipe(Recipe.new(
@@ -118,8 +107,7 @@ func _initialize_recipes():
 		"iron_armor",
 		1,
 		{Data.ResourcesName.IRON: 8},
-		"armor",
-		2
+		35,
 	))
 	
 	add_recipe(Recipe.new(
@@ -128,11 +116,9 @@ func _initialize_recipes():
 		"wooden_shield",
 		1,
 		{Data.ResourcesName.WOOD: 5, Data.ResourcesName.IRON: 1},
-		"armor",
-		1
+		20,
 	))
 	
-	print("RecipeManager initialisé avec ", recipes.size(), " recettes")
 
 # Ajouter une recette au dictionnaire
 func add_recipe(recipe: Recipe):
@@ -173,49 +159,6 @@ func get_craftable_recipes() -> Array[Recipe]:
 			craftable.append(recipe)
 	return craftable
 
-# Tenter de crafter une recette
-func try_craft_recipe(recipe_id: String) -> bool:
-	var recipe = get_recipe(recipe_id)
-	if recipe == null:
-		print("Recette introuvable: ", recipe_id)
-		return false
-	
-	# Vérifier si on peut crafter
-	if not recipe.can_craft():
-		print("Ressources insuffisantes pour: ", recipe.name)
-		var missing = recipe.get_missing_resources()
-		print("Manque: ", missing)
-		return false
-	
-	# Retirer les ressources
-	for item_type in recipe.requirements.keys():
-		var qty = recipe.requirements[item_type]
-		InventoryManager.remove_item(item_type, qty)
-	
-	# Ajouter le résultat
-	InventoryManager.add_item(recipe.result_item, recipe.result_quantity)
-	
-	# Émettre le signal
-	emit_signal("recipe_crafted", recipe_id, recipe.result_item, recipe.result_quantity)
-	
-	print("Craft réussi: ", recipe.name, " x", recipe.result_quantity)
-	return true
-
-# Vérifier si une recette est débloquée (basé sur le niveau)
-func is_recipe_unlocked(recipe_id: String, player_level: int = 999) -> bool:
-	var recipe = get_recipe(recipe_id)
-	if recipe == null:
-		return false
-	return player_level >= recipe.unlock_level
-
-# Obtenir les recettes débloquées pour un niveau donné
-func get_unlocked_recipes(player_level: int) -> Array[Recipe]:
-	var unlocked: Array[Recipe] = []
-	for recipe in recipes.values():
-		if player_level >= recipe.unlock_level:
-			unlocked.append(recipe)
-	return unlocked
-
 # Formater le nom d'un item (utilitaire)
 func format_item_name(item_type: String) -> String:
 	var names = {
@@ -234,3 +177,8 @@ func format_item_name(item_type: String) -> String:
 		"wooden_shield": "Bouclier en Bois"
 	}
 	return names.get(item_type, item_type.capitalize())
+
+## Retourne un recette aléatoire
+func get_random_recipe() -> Recipe:
+	var all_recipes: Array[Recipe] = get_all_recipes()
+	return all_recipes.pick_random()

@@ -26,7 +26,6 @@ func _on_inventory_updated(inventory: Dictionary):
 	update_inventory_display(inventory)
 
 func update_inventory_display(inventory: Dictionary):
-	print(inventory)
 	# Supprimer tous les anciens labels
 	for child in item_list.get_children():
 		child.queue_free()
@@ -40,27 +39,17 @@ func update_inventory_display(inventory: Dictionary):
 		return
 	
 	# Créer un label pour chaque item
-	for item_type in inventory.keys():
-		var quantity = inventory[item_type]
+	for item_id in inventory.keys():
+		var inventoryItem: InventoryManager.InventoryItem = inventory.get(item_id)
+		var quantity = InventoryManager.get_item_count(inventoryItem.id)
 		
 		# Créer un HBoxContainer pour aligner l'icône, le nom et la quantité
 		var hbox = HBoxContainer.new()
 		hbox.custom_minimum_size.y = 32
 		
-		# Optionnel: Icône de l'item
-		var icon = TextureRect.new()
-		icon.custom_minimum_size = Vector2(24, 24)
-		icon.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
-		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		# Charger l'icône si elle existe
-		var icon_path = "res://assets/icons/" + item_type + ".png"
-		if ResourceLoader.exists(icon_path):
-			icon.texture = load(icon_path)
-		hbox.add_child(icon)
-		
 		# Label pour le nom de l'item
 		var item_label = Label.new()
-		item_label.text = item_type
+		item_label.text = inventoryItem.name
 		item_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		item_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		

@@ -28,12 +28,13 @@ func _process(delta: float) -> void:
 			giveTimer = 0.0
 
 func _updateLabels() -> void:
-	label.text = item_container.item_name + " x" + str(item_container.quantity) + ""
+	label.text = item_container.game_resource.name + " x" + str(item_container.quantity) + ""
 	
 func give_item_to_player():
 	# Pas de joueur ou plus de quantité
 	if !playerReference or item_container.quantity == 0: return
-	playerReference.add_to_inventory(item_container.item_name, 1)
+	var resource: GameResource = item_container.game_resource
+	playerReference.add_to_inventory(resource.id, resource.name, 1)
 	item_container.remove_quantity(1)
 	_updateLabels()
 	spawn_pickup_effect()

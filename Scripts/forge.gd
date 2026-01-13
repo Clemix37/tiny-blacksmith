@@ -10,9 +10,9 @@ extends Node2D
 @onready var forge_button: Button = $UI/ForgePanel/MarginContainer/VBoxContainer/ButtonsContainer/HBoxContainer/ForgeButton
 @onready var close_button: Button = $UI/ForgePanel/MarginContainer/VBoxContainer/ButtonsContainer/HBoxContainer2/CloseButton
 
-var playerInArea = false
+var playerInArea: bool = false
 var playerReference = null
-var selected_recipe = null
+var selected_recipe: RecipeManager.Recipe = null
 var recipe_buttons = []
 
 # Called when the node enters the scene tree for the first time.
@@ -22,8 +22,6 @@ func _ready() -> void:
 	interactionArea.body_exited.connect(_on_interaction_area_exited)
 	forge_button.pressed.connect(_on_forge_btn_pressed)
 	close_button.pressed.connect(_on_close_btn_pressed)
-	# Connecter le signal du RecipeManager
-	RecipeManager.recipe_crafted.connect(_on_recipe_crafted)
 	
 	interactionLabel.visible = false
 	forge_panel.visible = false
@@ -36,7 +34,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if playerInArea and Input.is_action_just_pressed("interact"):
 		toggle_forge_ui()
-	
+		if forge_panel.visible:
+			update_recipe_availability()
+
 func _on_interaction_area_entered(body):
 	if body.is_in_group("player") or body.name == "Player":
 		playerInArea = true
@@ -61,10 +61,10 @@ func _on_forge_btn_pressed():
 	if selected_recipe == null or !selected_recipe.can_craft():
 		return
 	for item_index in selected_recipe.requirements.keys():
-		var item_type: String = Data.ResourcesNameArray[item_index]
+		var item_id: String = Data.ResourcesIdsArray[item_index]
 		var quantity: int = selected_recipe.requirements[item_index]
-		InventoryManager.remove_item(item_type, quantity)
-	InventoryManager.add_item(selected_recipe.name, 1)
+		InventoryManager.remove_item(item_id, quantity)
+	InventoryManager.add_item(selected_recipe.id, selected_recipe.name)
 	selected_recipe = null
 	update_recipe_availability()
 	update_selected_recipe_display()
@@ -94,8 +94,6 @@ func create_recipe_buttons():
 		
 		recipes_list.add_child(button)
 		recipe_buttons.append({"button": button, "recipe_id": recipe.id})
-	
-	print("Créé ", recipe_buttons.size(), " boutons de recettes")
 
 func update_selected_recipe_display():
 	if selected_recipe == null:
@@ -113,11 +111,11 @@ func update_selected_recipe_display():
 	var can_craft = selected_recipe.can_craft()
 	
 	for item_index in selected_recipe.requirements.keys():
-		var item_type: String = Data.ResourcesNameArray[item_index]
+		var item_id: String = Data.ResourcesIdsArray[item_index]
 		var required_qty = selected_recipe.requirements[item_index]
-		var available_qty = InventoryManager.get_item_count(item_type)
+		var available_qty = InventoryManager.get_item_count(item_id)
 		
-		var item_name = RecipeManager.format_item_name(item_type)
+		var item_name = RecipeManager.format_item_name(item_id)
 		requirements_text += "  • " + item_name + ": " + str(available_qty) + "/" + str(required_qty)
 		
 		if available_qty < required_qty:
@@ -152,14 +150,6 @@ func update_recipe_availability():
 	# Mettre à jour l'affichage de la recette sélectionnée
 	if selected_recipe:
 		update_selected_recipe_display()
-
-func _on_recipe_crafted(recipe_id: String, result_item: String, quantity: int):
-	print("Recette craftée via signal: ", recipe_id)
-	# Ici tu peux ajouter des effets visuels, sons, etc.
-
-func play_forge_animation():
-	# Animation de forge (particules, flash, son)
-	pass
 
 func _on_recipe_button_pressed(recipe_id: String):
 	selected_recipe = RecipeManager.get_recipe(recipe_id)

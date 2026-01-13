@@ -19,5 +19,5 @@ func _physics_process(delta: float) -> void:
 	velocity = dir.normalized() * SPEED
 	move_and_slide()
 	
-func add_to_inventory(type: String, quantity: int):
-	InventoryManager.add_item(type, quantity)
+func add_to_inventory(item_id: String, item_name: String, quantity: int):
+	InventoryManager.add_item(item_id, item_name, quantity)

@@ -16,9 +16,7 @@ var customer_sprites = [
 
 # Items possibles que le client peut demander
 var possible_items = Data.ResourcesNameArray
-var requested_item: String = ""
-var requested_quantity: int = 1
-var reward: int = 0
+var requested_recipe: RecipeManager.Recipe = null
 
 # État du client
 enum State { WALKING_TO_COUNTER, WAITING, LEAVING, SERVED }
@@ -72,12 +70,10 @@ func initialize(counter_pos: Vector2):
 
 func generate_request():
 	# Choisir un item aléatoire
-	requested_item = possible_items[randi() % possible_items.size()]
-	requested_quantity = randi_range(1, 5)
-	reward = _calculate_reward()
-	wait_time = Data.TimePerItemToCraft * requested_quantity + Data.TimePerBuild
+	requested_recipe = RecipeManager.get_random_recipe()
+	wait_time = 30
 	
-	label.text = requested_item.capitalize() + " x" + str(requested_quantity) + " (+" + str(reward) + "$)"
+	label.text = requested_recipe.name.capitalize() + " (+" + str(requested_recipe.reward) + "$)"
 
 func _physics_process(delta):
 	match current_state:
@@ -120,7 +116,7 @@ func wait_at_counter(delta):
 	
 	# Si le temps d'attente est écoulé, partir mécontent
 	if wait_timer <= 0:
-		print("Client parti sans être servi !")
+		print("Client parti sans être servi...")
 		current_state = State.LEAVING
 		target_position = spawn_position
 		_toggle_labels_visibility(false)
@@ -128,10 +124,11 @@ func wait_at_counter(delta):
 func serve_customer() -> bool:
 	# Client déjà servi, ne rien faire
 	if current_state == State.SERVED: return false
+	var quantity := 1
 	# Vérifier si le joueur a les items demandés
-	if InventoryManager.has_item(requested_item, requested_quantity):
+	if InventoryManager.has_item(requested_recipe.id, quantity):
 		# Retirer les items de l'inventaire
-		InventoryManager.remove_item(requested_item, requested_quantity)
+		InventoryManager.remove_item(requested_recipe.id, quantity)
 		
 		label.text = "Merci !"
 		await get_tree().create_timer(1.0).timeout
@@ -140,16 +137,16 @@ func serve_customer() -> bool:
 		target_position = spawn_position
 		_toggle_labels_visibility(false)
 		
-		emit_signal("customer_served", requested_item, requested_quantity)
+		emit_signal("customer_served", requested_recipe, quantity)
 		
-		InventoryManager.add_money(reward)
+		InventoryManager.add_money(requested_recipe.reward)
 		
 		return true
 	else:
-		print("Pas assez d'items dans l'inventaire !")
+		print("Pas assez d'items dans l'inventaire...")
 		label.text = "Pas assez..."
 		await get_tree().create_timer(1.0).timeout
-		label.text = requested_item.capitalize() + " x" + str(requested_quantity)
+		label.text = requested_recipe.capitalize()
 		return false
 
 func leave_shop(delta):
@@ -162,12 +159,6 @@ func leave_shop(delta):
 	if global_position.distance_to(target_position) < 30:
 		emit_signal("customer_leaving")
 		queue_free()  # Supprimer le client
-
-func get_request() -> Dictionary:
-	return {
-		"item": requested_item,
-		"quantity": requested_quantity
-	}
 
 # Détection du joueur quand il rentre dans la zone de service
 func _on_body_entered(body) -> void:
@@ -182,9 +173,3 @@ func _update_timer_label() -> void:
 func _toggle_labels_visibility(visible: bool) -> void:
 	label.visible = visible
 	timerLabel.visible = visible
-
-func _calculate_reward() -> int:
-	var indexOfResource: int = Data.ResourcesNameArray.find(requested_item, 0)
-	if indexOfResource == -1: return 0
-	var pricePerResource: int = Data.ResourcesPrices[indexOfResource]
-	return pricePerResource * requested_quantity
