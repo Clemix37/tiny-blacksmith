@@ -1,0 +1,117 @@
+[gd_scene load_steps=8 format=3 uid="uid://b42wur6t10st"]
+
+[ext_resource type="Script" uid="uid://dadr2pl8hu3od" path="res://Scripts/UI/HUD.gd" id="1_xaom8"]
+[ext_resource type="Texture2D" uid="uid://bqsgqa5e5jhm5" path="res://Assets/Icons/crown-coin.svg" id="2_4bm6u"]
+[ext_resource type="Texture2D" uid="uid://u7luj6v2djx8" path="res://Assets/Icons/power.png" id="3_ykvyr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3see8"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_3see8"]
+font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qubnh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xaom8"]
+bg_color = Color(0.6, 0.6, 0.6, 0.41960785)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_xaom8")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MoneyPanel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 11.0
+offset_right = 218.0
+offset_bottom = 61.0
+
+[node name="Panel" type="Panel" parent="Control/MoneyPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -20.0
+offset_right = 46.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3see8")
+
+[node name="TextureRect" type="TextureRect" parent="Control/MoneyPanel/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_4bm6u")
+expand_mode = 1
+
+[node name="MoneyLabel" type="Label" parent="Control/MoneyPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = -18.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "MONEY $"
+label_settings = SubResource("LabelSettings_3see8")
+vertical_alignment = 1
+
+[node name="QuitGameBtn" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -67.0
+offset_top = 8.0
+offset_right = -17.0
+offset_bottom = 58.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_qubnh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qubnh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xaom8")
+icon = ExtResource("3_ykvyr")
+
+[node name="DeliveryBtn" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -158.0
+offset_top = 16.0
+offset_right = -77.0
+offset_bottom = 47.0
+grow_horizontal = 0
+text = "DELIVERY"
+
+[node name="MenuBtn" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -226.0
+offset_top = 16.0
+offset_right = -169.0
+offset_bottom = 47.0
+grow_horizontal = 0
+text = "MENU"

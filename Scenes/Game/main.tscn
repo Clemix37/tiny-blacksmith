@@ -9,8 +9,8 @@
 [ext_resource type="Script" uid="uid://lvclurcx5qp2" path="res://Scripts/Customer/customer_spawner.gd" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://bsm604xe8jlun" path="res://Scenes/Characters/customer.tscn" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cxid2xxwn0b06" path="res://Scenes/Game/forge.tscn" id="7_344ge"]
-[ext_resource type="PackedScene" uid="uid://b7sb48vkewfgu" path="res://Scenes/Game/HUD.tscn" id="8_344ge"]
 [ext_resource type="PackedScene" uid="uid://eskxblvrckro" path="res://Scenes/Game/walls.tscn" id="10_wnnnj"]
+[ext_resource type="PackedScene" uid="uid://b42wur6t10st" path="res://Scenes/UI/HUD.tscn" id="11_5fdju"]
 
 [sub_resource type="Resource" id="Resource_xqoiw"]
 script = ExtResource("4_5fdju")
@@ -78,23 +78,23 @@ position = Vector2(0, 128)
 [node name="ItemContainers" type="Node2D" parent="."]
 
 [node name="WoodContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
-position = Vector2(-165, 544)
+position = Vector2(90, 553)
 item_container = SubResource("Resource_wnnnj")
 
 [node name="SteelContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
-position = Vector2(-1, 544)
+position = Vector2(254, 553)
 item_container = SubResource("Resource_veifj")
 
 [node name="CopperContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
-position = Vector2(164, 544)
+position = Vector2(419, 553)
 item_container = SubResource("Resource_5fdju")
 
 [node name="IronContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
-position = Vector2(329, 544)
+position = Vector2(584, 553)
 item_container = SubResource("Resource_sw6w7")
 
 [node name="CoalContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
-position = Vector2(494, 544)
+position = Vector2(749, 553)
 item_container = SubResource("Resource_cwscw")
 
 [node name="Inventory" parent="." instance=ExtResource("5_kry3j")]
@@ -103,65 +103,66 @@ visible = false
 [node name="Spawns" type="Node" parent="."]
 
 [node name="CustomerSpawner" type="Node2D" parent="Spawns" node_paths=PackedStringArray("spawnPositions")]
-visible = false
 script = ExtResource("6_21xkr")
 customer_scene = ExtResource("7_6bp64")
 spawnPositions = [NodePath("../SpawnPoints/SpawnPoint"), NodePath("../SpawnPoints/SpawnPoint2"), NodePath("../SpawnPoints/SpawnPoint3"), NodePath("../SpawnPoints/SpawnPoint4"), NodePath("../SpawnPoints/SpawnPoint5"), NodePath("../SpawnPoints/SpawnPoint6"), NodePath("../SpawnPoints/SpawnPoint7"), NodePath("../SpawnPoints/SpawnPoint8"), NodePath("../SpawnPoints/SpawnPoint9"), NodePath("../SpawnPoints/SpawnPoint10"), NodePath("../SpawnPoints/SpawnPoint11"), NodePath("../SpawnPoints/SpawnPoint12"), NodePath("../SpawnPoints/SpawnPoint13"), NodePath("../SpawnPoints/SpawnPoint14"), NodePath("../SpawnPoints/SpawnPoint15"), NodePath("../SpawnPoints/SpawnPoint16")]
+min_x_position = 160
+max_x_position = 990
 y_counter = 128
 
 [node name="SpawnPoints" type="Node2D" parent="Spawns"]
 
 [node name="SpawnPoint" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(106, -260)
+position = Vector2(198, -260)
 
 [node name="SpawnPoint2" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(156, -260)
+position = Vector2(248, -260)
 
 [node name="SpawnPoint3" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(206, -260)
+position = Vector2(298, -260)
 
 [node name="SpawnPoint4" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(256, -260)
+position = Vector2(348, -260)
 
 [node name="SpawnPoint5" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(306, -260)
+position = Vector2(398, -260)
 
 [node name="SpawnPoint6" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(356, -260)
+position = Vector2(448, -260)
 
 [node name="SpawnPoint7" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(406, -260)
+position = Vector2(498, -260)
 
 [node name="SpawnPoint8" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(456, -260)
+position = Vector2(548, -260)
 
 [node name="SpawnPoint9" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(506, -260)
+position = Vector2(598, -260)
 
 [node name="SpawnPoint10" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(556, -260)
+position = Vector2(648, -260)
 
 [node name="SpawnPoint11" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(606, -260)
+position = Vector2(698, -260)
 
 [node name="SpawnPoint12" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(656, -260)
+position = Vector2(748, -260)
 
 [node name="SpawnPoint13" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(706, -260)
+position = Vector2(798, -260)
 
 [node name="SpawnPoint14" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(756, -260)
+position = Vector2(848, -260)
 
 [node name="SpawnPoint15" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(806, -260)
+position = Vector2(898, -260)
 
 [node name="SpawnPoint16" type="Marker2D" parent="Spawns/SpawnPoints"]
-position = Vector2(856, -260)
+position = Vector2(948, -260)
 
 [node name="Forge" parent="." instance=ExtResource("7_344ge")]
-position = Vector2(829, 278)
-
-[node name="UI" parent="." instance=ExtResource("8_344ge")]
+position = Vector2(818, 226)
 
 [node name="WallsWorld" parent="." instance=ExtResource("10_wnnnj")]
+
+[node name="HUD" parent="." instance=ExtResource("11_5fdju")]
