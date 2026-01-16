@@ -4,7 +4,6 @@ extends Node2D
 @export var item_container: ItemContainerResource
 @onready var label: Label = $Label
 @onready var areaDetection: Area2D = $PlayerDetection/Area2D
-@onready var chest_animation: AnimatedSprite2D = $Container/ChestAnimation
 @onready var chest: Node2D = $Chest
 
 var playerInArea = false

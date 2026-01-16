@@ -96,7 +96,7 @@ func walk_to_counter(delta):
 	move_and_slide()
 	
 	# Vérifier si arrivé au comptoir
-	if global_position.distance_to(target_position) < 50:
+	if global_position.distance_to(target_position) < 30:
 		arrive_at_counter()
 
 func arrive_at_counter():
@@ -146,7 +146,7 @@ func serve_customer() -> bool:
 		print("Pas assez d'items dans l'inventaire...")
 		label.text = "Pas assez..."
 		await get_tree().create_timer(1.0).timeout
-		label.text = requested_recipe.capitalize()
+		label.text = requested_recipe.name.capitalize()
 		return false
 
 func leave_shop(delta):
@@ -157,7 +157,6 @@ func leave_shop(delta):
 	
 	# Vérifier si sorti du magasin
 	if global_position.distance_to(target_position) < 30:
-		emit_signal("customer_leaving")
 		queue_free()  # Supprimer le client
 
 # Détection du joueur quand il rentre dans la zone de service
@@ -169,7 +168,6 @@ func _on_body_entered(body) -> void:
 func _update_timer_label() -> void:
 	timerLabel.text = str(roundi(wait_timer)) + "s"
 
-# 
-func _toggle_labels_visibility(visible: bool) -> void:
-	label.visible = visible
-	timerLabel.visible = visible
+func _toggle_labels_visibility(label_visible: bool) -> void:
+	label.visible = label_visible
+	timerLabel.visible = label_visible
