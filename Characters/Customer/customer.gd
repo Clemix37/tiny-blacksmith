@@ -3,16 +3,7 @@ extends CharacterBody2D
 # Paramètres du client
 @export var move_speed: float = 100.0
 @export var wait_time: float = 5.0  # Temps d'attente au comptoir
-
-# Apparence du client
-var customer_sprites = [
-	"res://Assets/Customers/01/tile_0024.png",
-	"res://Assets/Customers/02/tile_0105.png",
-	"res://Assets/Customers/03/tile_0186.png",
-	"res://Assets/Customers/04/tile_0267.png",
-	"res://Assets/Customers/04/tile_0348.png",
-	"res://Assets/Customers/04/tile_0429.png",
-]
+@onready var customer_animation_sprite: AnimatedSprite2D = $customer_animation_sprite
 
 # Items possibles que le client peut demander
 var possible_items = Data.ResourcesNameArray
@@ -51,18 +42,7 @@ func _ready():
 	timerLabel.visible = false
 	label.visible = false
 	
-	# Appliquer un sprite/couleur aléatoire
-	randomize_appearance()
 	collisionArea.body_entered.connect(_on_body_entered)
-
-func randomize_appearance():
-	if sprite:
-		# Essayer de charger un sprite aléatoire
-		var sprite_index = randi() % customer_sprites.size()
-		var sprite_path = customer_sprites[sprite_index]
-		
-		if ResourceLoader.exists(sprite_path):
-			sprite.texture = load(sprite_path)
 
 func initialize(counter_pos: Vector2):
 	counter_position = counter_pos
@@ -79,12 +59,15 @@ func _physics_process(delta):
 	match current_state:
 		State.WALKING_TO_COUNTER:
 			walk_to_counter(delta)
+			customer_animation_sprite.play("walk")
 		
 		State.WAITING:
 			wait_at_counter(delta)
+			customer_animation_sprite.play("idle")
 		
 		State.LEAVING:
 			leave_shop(delta)
+			customer_animation_sprite.play("walk")
 		
 		State.SERVED:
 			leave_shop(delta)
