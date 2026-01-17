@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://b8wb5kremkns0"]
 
-[ext_resource type="Texture2D" uid="uid://nr6jnjlc8ifw" path="res://Assets/Chest/tile_0089.png" id="1_4awgj"]
-[ext_resource type="Script" uid="uid://bg48v3pvi145x" path="res://Scripts/Prefabs/chest.gd" id="1_gnwiu"]
-[ext_resource type="Texture2D" uid="uid://dl05alnoatrrc" path="res://Assets/Chest/tile_0090.png" id="2_gnwiu"]
-[ext_resource type="Texture2D" uid="uid://byg0x61aokh4g" path="res://Assets/Chest/tile_0091.png" id="3_hts7t"]
+[ext_resource type="Texture2D" uid="uid://nr6jnjlc8ifw" path="res://Assets/Prefabs/Chest/tile_0089.png" id="1_4awgj"]
+[ext_resource type="Script" uid="uid://bg48v3pvi145x" path="res://Assets/Prefabs/Chest/chest.gd" id="1_gnwiu"]
+[ext_resource type="Texture2D" uid="uid://dl05alnoatrrc" path="res://Assets/Prefabs/Chest/tile_0090.png" id="2_gnwiu"]
+[ext_resource type="Texture2D" uid="uid://byg0x61aokh4g" path="res://Assets/Prefabs/Chest/tile_0091.png" id="3_hts7t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8mu65"]
 animations = [{

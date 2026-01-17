@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fbjysf4dmlho"
-path="res://.godot/imported/tiny-blacksmith-game-menu-art.png-47ea0634ac349b748629c7e6dc7c9e82.ctex"
+uid="uid://dl05alnoatrrc"
+path="res://.godot/imported/tile_0090.png-aa738c62f7bc420bb5edd1f9bc7ea1e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tiny-blacksmith-game-menu-art.png"
-dest_files=["res://.godot/imported/tiny-blacksmith-game-menu-art.png-47ea0634ac349b748629c7e6dc7c9e82.ctex"]
+source_file="res://Assets/Prefabs/Chest/tile_0090.png"
+dest_files=["res://.godot/imported/tile_0090.png-aa738c62f7bc420bb5edd1f9bc7ea1e2.ctex"]
 
 [params]
 

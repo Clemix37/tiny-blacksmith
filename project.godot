@@ -18,8 +18,8 @@ config/icon="res://Assets/Icons/icon.svg"
 [autoload]
 
 InventoryManager="*res://Scripts/Inventory/inventory_manager.gd"
-Data="*res://Scripts/Data/data.gd"
-RecipeManager="*res://Scripts/Data/recipe_manager.gd"
+Data="*res://autoload/data.gd"
+RecipeManager="*res://autoload/recipe_manager.gd"
 
 [display]
 

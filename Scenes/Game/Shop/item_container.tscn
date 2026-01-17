@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b25k7hyv2ewad"]
 
 [ext_resource type="Script" uid="uid://dhkr2t7wb2cjv" path="res://Scripts/item_container.gd" id="1_vffq3"]
-[ext_resource type="PackedScene" uid="uid://1xl0n1g00n85" path="res://Scenes/Effects/pickup_effect.tscn" id="2_bkexq"]
-[ext_resource type="PackedScene" uid="uid://b8wb5kremkns0" path="res://Scenes/Prefabs/chest.tscn" id="6_ojrn3"]
+[ext_resource type="PackedScene" uid="uid://1xl0n1g00n85" path="res://Effects/pickup_effect.tscn" id="2_bkexq"]
+[ext_resource type="PackedScene" uid="uid://b8wb5kremkns0" path="res://Assets/Prefabs/Chest/chest.tscn" id="6_ojrn3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vffq3"]
 radius = 43.0

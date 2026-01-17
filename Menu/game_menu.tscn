@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dab78mgk4cqf"]
 
-[ext_resource type="Script" uid="uid://d1cyl0s6o1yau" path="res://Scripts/Menu/game_menu.gd" id="1_b8pvs"]
-[ext_resource type="Texture2D" uid="uid://fbjysf4dmlho" path="res://Assets/tiny-blacksmith-game-menu-art.png" id="1_rfxrv"]
+[ext_resource type="Script" uid="uid://d1cyl0s6o1yau" path="res://Menu/game_menu.gd" id="1_b8pvs"]
+[ext_resource type="Texture2D" uid="uid://fbjysf4dmlho" path="res://Assets/Images/tiny-blacksmith-game-menu-art.png" id="1_rfxrv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7did"]
 bg_color = Color(0.6313726, 0.26666668, 0.101960786, 1)

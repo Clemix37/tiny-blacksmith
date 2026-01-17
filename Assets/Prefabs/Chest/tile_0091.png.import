@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpidmfcoed1gb"
-path="res://.godot/imported/game-menu.png-b1d63b93b2cc22239805f4643c83c0e7.ctex"
+uid="uid://byg0x61aokh4g"
+path="res://.godot/imported/tile_0091.png-3e5c4ab8bc7c11ca46fb579f1ec6704f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/game-menu.png"
-dest_files=["res://.godot/imported/game-menu.png-b1d63b93b2cc22239805f4643c83c0e7.ctex"]
+source_file="res://Assets/Prefabs/Chest/tile_0091.png"
+dest_files=["res://.godot/imported/tile_0091.png-3e5c4ab8bc7c11ca46fb579f1ec6704f.ctex"]
 
 [params]
 
