@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://byr5xg1aws6oj"]
 
-[ext_resource type="Script" uid="uid://d0lmovy0vmvi6" path="res://Scripts/Inventory/inventory.gd" id="1_wdn4f"]
+[ext_resource type="Script" uid="uid://d0lmovy0vmvi6" path="res://Inventory/inventory.gd" id="1_wdn4f"]
 
 [node name="Inventory" type="CanvasLayer"]
 layer = 2

@@ -17,10 +17,10 @@ func _ready() -> void:
 
 
 func _on_delivery_btn_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Delivery/delivery_scene.tscn")
+	get_tree().change_scene_to_file("res://Delivery/delivery.tscn")
 
 func _on_menu_btn_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Menu/game_menu.tscn")
+	get_tree().change_scene_to_file("res://Menu/game_menu.tscn")
 
 func _update_money_label():
 	money_label.text = str(InventoryManager.get_money()) + "$"

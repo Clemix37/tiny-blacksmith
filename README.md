@@ -37,4 +37,9 @@ Todo
 - [x] Système d'argent ajouté et affiché
 - [X] Quand je joue, je gagne de l'argent mais quand je clique sur le menu je perds mon argent alors que mon inventaire est gardé... (juste oubli d'affichage de l'argent)  
 - [X] animation du coffre ouvrant + fermant  
-- [ ] trouver chemin vers les points d'entrée les plus proches des clients sinon ertains sont bloqués dérrière le mur...
+- [X] trouver chemin vers les points d'entrée les plus proches des clients sinon ertains sont bloqués dérrière le mur... (suppression de mur en haut + suppression des entry_points)  
+- [X] sprite avec animations for players  
+- [ ] make options page  
+- [ ] create shop with buying products  
+- [ ] make saving game system  
+- [ ] make loading game system  

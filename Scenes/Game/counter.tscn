@@ -1,10 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://ch7w4uyko35dd"]
+[gd_scene load_steps=5 format=4 uid="uid://ch7w4uyko35dd"]
 
 [ext_resource type="Texture2D" uid="uid://mreo6jchqnwv" path="res://Assets/Tilemap/tilemap_packed.png" id="1_tof5g"]
-
-[sub_resource type="GDScript" id="GDScript_cpowt"]
-script/source = "extends Node2D
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viryw"]
 size = Vector2(1152, 32)
@@ -148,8 +144,7 @@ texture = ExtResource("1_tof5g")
 [sub_resource type="TileSet" id="TileSet_h8eth"]
 sources/3 = SubResource("TileSetAtlasSource_5ewr2")
 
-[node name="Shop" type="Node2D"]
-script = SubResource("GDScript_cpowt")
+[node name="Counter" type="Node2D"]
 
 [node name="BarArea" type="StaticBody2D" parent="."]
 
