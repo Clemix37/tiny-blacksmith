@@ -41,5 +41,5 @@ Todo
 - [X] sprite avec animations for players  
 - [ ] make options page  
 - [ ] create shop with buying products  
-- [ ] make saving game system  
-- [ ] make loading game system  
+- [X] make saving game system  
+- [X] make loading game system  

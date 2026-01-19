@@ -20,10 +20,12 @@ func _on_delivery_btn_pressed():
 	get_tree().change_scene_to_file("res://Delivery/delivery.tscn")
 
 func _on_menu_btn_pressed():
+	SaveLoad.save()
 	get_tree().change_scene_to_file("res://Menu/game_menu.tscn")
 
 func _update_money_label():
 	money_label.text = str(InventoryManager.get_money()) + "$"
 
 func _quit_game():
+	SaveLoad.save()
 	get_tree().quit()

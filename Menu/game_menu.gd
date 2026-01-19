@@ -11,6 +11,7 @@ func _ready() -> void:
 	quit_game_btn.pressed.connect(_quit_game)
 
 func _on_play_pressed():
+	SaveLoad._load()
 	get_tree().change_scene_to_file("res://Scenes/Game/main.tscn")
 
 func _quit_game():
