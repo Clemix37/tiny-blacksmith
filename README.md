@@ -24,9 +24,6 @@ Todo
 - [x] récupérer les items tant qu'on est dans la zone de récupération de l'item
 - [x] masquer le libellé de timer quand merci affiché sur le customer
 - [x] créer la forge avec label d'interaction
-- [ ] système de missions / objectifs (servir 2 clients / créer 2 fois la recette X)
-- [ ] système de commandes avec livraisons par livreurs
-- [ ] nouvel écran de jeu: gestion de l'inventaire, rangement des resources
 - [X] faire en sorte d'afficher les recettes sur la liste
 - [X] voir si possible de faire coffre de stockage d'items en avances
 - [X] faire en sorte que les clients demandes des recettes plutot que des resources  
@@ -41,5 +38,8 @@ Todo
 - [X] sprite avec animations for players  
 - [ ] make options page  
 - [ ] create shop with buying products  
-- [ ] make saving game system  
-- [ ] make loading game system  
+- [X] make saving game system  
+- [X] make loading game system  
+- [ ] système de missions / objectifs (servir 2 clients / créer 2 fois la recette X)  
+- [ ] système de commandes avec livraisons par livreurs  
+- [ ] nouvel écran de jeu: gestion de l'inventaire, rangement des resources  
