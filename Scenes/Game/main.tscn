@@ -70,12 +70,14 @@ metadata/_custom_type_script = "uid://04v11heeij0i"
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+z_index = 99
 position = Vector2(577, 269)
 
 [node name="Counter" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(0, 128)
 
 [node name="ItemContainers" type="Node2D" parent="."]
+z_index = 2
 
 [node name="WoodContainer" parent="ItemContainers" instance=ExtResource("4_jjvhh")]
 position = Vector2(90, 553)
