@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxid2xxwn0b06"]
+[gd_scene load_steps=6 format=3 uid="uid://cxid2xxwn0b06"]
 
 [ext_resource type="Script" uid="uid://1mx7sclqql2a" path="res://Forge/forge.gd" id="1_w38dr"]
+[ext_resource type="Texture2D" uid="uid://dvapl6ce61l82" path="res://Assets/Icons/anvil-impact.svg" id="2_wdyxk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88ku4"]
 size = Vector2(150, 100)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_88ku4"]
 radius = 124.01613
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdo0s"]
+bg_color = Color(0.45490196, 0.31764707, 0.15686275, 0.7882353)
 
 [node name="Forge" type="Node2D"]
 script = ExtResource("1_w38dr")
@@ -60,6 +64,7 @@ offset_right = 200.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xdo0s")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/ForgePanel"]
 layout_mode = 0
@@ -74,8 +79,24 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="UI/ForgePanel/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/ForgePanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="UI/ForgePanel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_wdyxk")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ForgePanel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="TitleLabel" type="Label" parent="UI/ForgePanel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
 text = "FORGE"
 horizontal_alignment = 1
 
