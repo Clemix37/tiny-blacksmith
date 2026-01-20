@@ -9,9 +9,11 @@ extends Node2D
 var playerInArea = false
 var playerReference = null
 var giveTimer: float = 0.0
+var quantity: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	quantity = ContainersManager.get_container_quantity(item_container.id_container)
 	_updateLabels()
 	areaDetection.body_entered.connect(_on_body_entered)
 	areaDetection.body_exited.connect(_on_body_exited)
@@ -27,7 +29,7 @@ func _process(delta: float) -> void:
 			giveTimer = 0.0
 
 func _updateLabels() -> void:
-	label.text = item_container.game_resource.name + " x" + str(item_container.quantity) + ""
+	label.text = item_container.game_resource.name + " x" + str(quantity) + ""
 	
 func give_item_to_player():
 	# Pas de joueur ou plus de quantité

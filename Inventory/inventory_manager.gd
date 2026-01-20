@@ -55,6 +55,9 @@ func remove_money(money_to_remove: int) -> void:
 func get_money() -> int:
 	return money
 
+func has_money(price: int) -> bool:
+	return money >= price
+
 class InventoryItem:
 	var id: String
 	var name: String

@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var play_btn: Button = $UI/HBoxContainer/MarginContainer/VBoxContainer/PlayBtn
-@onready var options_btn: Button = $UI/HBoxContainer/MarginContainer/VBoxContainer/OptionsBtn
 @onready var quit_game_btn: Button = $UI/HBoxContainer/MarginContainer/VBoxContainer/QuitGameBtn
 
 

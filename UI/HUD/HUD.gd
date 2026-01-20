@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 @onready var money_label: Label = $Control/MoneyPanel/MoneyLabel
-@onready var quit_game_btn: Button = $Control/QuitGameBtn
 @onready var delivery_btn: Button = $Control/DeliveryBtn
 @onready var menu_btn: Button = $Control/MenuBtn
 
@@ -10,7 +9,6 @@ extends CanvasLayer
 func _ready() -> void:
 	delivery_btn.pressed.connect(_on_delivery_btn_pressed)
 	menu_btn.pressed.connect(_on_menu_btn_pressed)
-	quit_game_btn.pressed.connect(_quit_game)
 	if InventoryManager.has_signal("money_updated"):
 		InventoryManager.money_updated.connect(_update_money_label)
 	_update_money_label()
@@ -25,7 +23,3 @@ func _on_menu_btn_pressed():
 
 func _update_money_label():
 	money_label.text = str(InventoryManager.get_money()) + "$"
-
-func _quit_game():
-	SaveLoad.save()
-	get_tree().quit()
