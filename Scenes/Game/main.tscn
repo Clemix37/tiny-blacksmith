@@ -71,7 +71,7 @@ metadata/_custom_type_script = "uid://04v11heeij0i"
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 z_index = 99
-position = Vector2(577, 269)
+position = Vector2(573, 335)
 
 [node name="Counter" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(0, 128)
@@ -166,5 +166,6 @@ position = Vector2(948, -260)
 position = Vector2(818, 226)
 
 [node name="WallsWorld" parent="." instance=ExtResource("10_wnnnj")]
+position = Vector2(0, -2)
 
 [node name="HUD" parent="." instance=ExtResource("11_5fdju")]
