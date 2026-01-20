@@ -2,7 +2,7 @@ extends Node
 
 ## Clé = id, Valeur = InventoryItem
 var inventory = {}
-var money: int = 0
+var money: int = Data.moneyToStart
 
 signal inventory_updated(inventory)
 signal money_updated

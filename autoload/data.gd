@@ -13,12 +13,15 @@ var ResourcesIdsArray := [
 ]
 
 var ResourcesPrices = {
-	ResourcesName.WOOD: 1,
-	ResourcesName.COAL: 2,
-	ResourcesName.COPPER: 3,
-	ResourcesName.IRON: 5,
-	ResourcesName.STEEL: 10,
+	ResourcesName.WOOD: 2,
+	ResourcesName.COAL: 4,
+	ResourcesName.COPPER: 6,
+	ResourcesName.IRON: 10,
+	ResourcesName.STEEL: 18,
 }
 
+var moneyToStart: int = 30
 var TimePerItemToCraft = 4
 var TimePerBuild = 10
+func _ready() -> void:
+	print(OS.get_executable_path())

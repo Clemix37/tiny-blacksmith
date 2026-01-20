@@ -20,6 +20,7 @@ metadata/_custom_type_script = "uid://b6qsjr2ec6rrw"
 
 [sub_resource type="Resource" id="Resource_wnnnj"]
 script = ExtResource("4_veifj")
+id_container = "wood_container"
 game_resource = SubResource("Resource_xqoiw")
 metadata/_custom_type_script = "uid://04v11heeij0i"
 
@@ -31,6 +32,7 @@ metadata/_custom_type_script = "uid://b6qsjr2ec6rrw"
 
 [sub_resource type="Resource" id="Resource_veifj"]
 script = ExtResource("4_veifj")
+id_container = "steel_container"
 game_resource = SubResource("Resource_yyavk")
 metadata/_custom_type_script = "uid://04v11heeij0i"
 
@@ -42,6 +44,7 @@ metadata/_custom_type_script = "uid://b6qsjr2ec6rrw"
 
 [sub_resource type="Resource" id="Resource_5fdju"]
 script = ExtResource("4_veifj")
+id_container = "copper_container"
 game_resource = SubResource("Resource_wipx2")
 metadata/_custom_type_script = "uid://04v11heeij0i"
 
@@ -53,6 +56,7 @@ metadata/_custom_type_script = "uid://b6qsjr2ec6rrw"
 
 [sub_resource type="Resource" id="Resource_sw6w7"]
 script = ExtResource("4_veifj")
+id_container = "iron_container"
 game_resource = SubResource("Resource_nq4jv")
 metadata/_custom_type_script = "uid://04v11heeij0i"
 
@@ -64,6 +68,7 @@ metadata/_custom_type_script = "uid://b6qsjr2ec6rrw"
 
 [sub_resource type="Resource" id="Resource_cwscw"]
 script = ExtResource("4_veifj")
+id_container = "coal_container"
 game_resource = SubResource("Resource_1hyuf")
 metadata/_custom_type_script = "uid://04v11heeij0i"
 

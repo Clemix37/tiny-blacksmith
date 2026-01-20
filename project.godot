@@ -17,9 +17,10 @@ config/icon="res://Assets/Icons/icon.svg"
 
 [autoload]
 
-InventoryManager="*res://Inventory/inventory_manager.gd"
 Data="*res://autoload/data.gd"
+InventoryManager="*res://Inventory/inventory_manager.gd"
 RecipeManager="*res://autoload/recipe_manager.gd"
+ContainersManager="*res://autoload/containers_manager.gd"
 SaveLoad="*res://autoload/SaveLoad.gd"
 
 [display]
