@@ -62,8 +62,8 @@ func _on_buy_btn() -> void:
 	InventoryManager.remove_money(current_cost)
 	# Adds to the containers the bought resources
 	for id_resource in current_cart.keys():
-		ContainersManager.add_quantity(id_resource, current_cart[id_resource])
-		print(ContainersManager.containers[id_resource])
+		var id_container: String = ContainersManager.ContainersIds[Data.ResourcesIdsArray.find(id_resource)]
+		ContainersManager.add_quantity(id_container, current_cart[id_resource])
 	current_cart = {}
 	current_cost = 0
 	# Update the UI

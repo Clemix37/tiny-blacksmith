@@ -86,8 +86,6 @@ func arrive_at_counter():
 	current_state = State.WAITING
 	velocity = Vector2.ZERO
 	wait_timer = wait_time
-	
-	print(label)
 	# Afficher la demande
 	_toggle_labels_visibility(true)
 	

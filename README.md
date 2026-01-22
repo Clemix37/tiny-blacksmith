@@ -36,10 +36,10 @@ Todo
 - [X] animation du coffre ouvrant + fermant  
 - [X] trouver chemin vers les points d'entrée les plus proches des clients sinon ertains sont bloqués dérrière le mur... (suppression de mur en haut + suppression des entry_points)  
 - [X] sprite avec animations for players  
-- [ ] create shop with buying products  
+- [X] create shop with buying products  
 - [X] make saving game system  
 - [X] make loading game system  
 - [X] système de commandes avec livraisons par livreurs  
 - [X] nouvel écran de jeu: gestion de l'inventaire, rangement des resources  
-- [ ] quand on achète, cela ne s'ajoute pas dans les containers...  
+- [X] quand on achète, cela ne s'ajoute pas dans les containers...  
 - [ ] système de missions / objectifs (servir 2 clients / créer 2 fois la recette X)  

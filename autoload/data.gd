@@ -24,5 +24,3 @@ var moneyToStart: int = 30
 var TimePerItemToCraft = 4
 var TimePerBuild = 10
 var version: int = 0
-func _ready() -> void:
-	print(OS.get_executable_path())
