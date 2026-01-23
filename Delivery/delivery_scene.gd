@@ -83,12 +83,12 @@ func _update_buy_btns_display():
 	buy_btn.visible = contains_cart
 
 func _update_current_money_label() -> void:
-	money_label.text = str(InventoryManager.money) + "$"
+	money_label.text = "Money: " + str(InventoryManager.money) + "$"
 
 func _update_cart_labels() -> void:
 	var cart_string: String = ""
 	for name_resource in current_cart.keys():
-		cart_string += name_resource + "x" + str(current_cart[name_resource]) + ", "
+		cart_string += name_resource + " x" + str(current_cart[name_resource]) + ", "
 	# Displays every item bought and the quantity
 	cart_label.text = "Bought: " + (cart_string if cart_string.length() > 0 else "Nothing")
 	# The cost of current cart

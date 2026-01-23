@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctgm1gbhbu1mv"
-path="res://.godot/imported/mine-wagon.svg-45d2066164c1971f8684f775a2320514.ctex"
+uid="uid://b6sqndlj0b63o"
+path="res://.godot/imported/wire-coil.svg-d05dc9722659c6bce0480e85cd60749f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/mine-wagon.svg"
-dest_files=["res://.godot/imported/mine-wagon.svg-45d2066164c1971f8684f775a2320514.ctex"]
+source_file="res://Assets/Icons/wire-coil.svg"
+dest_files=["res://.godot/imported/wire-coil.svg-d05dc9722659c6bce0480e85cd60749f.ctex"]
 
 [params]
 
