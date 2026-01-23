@@ -47,7 +47,7 @@ func _initialize_recipes():
 	# Catégorie: Outils en bois
 	add_recipe(Recipe.new(
 		"wooden_axe",  # ID
-		"Hache en Bois",  # Nom affiché
+		"Wooden Axe",  # Nom affiché
 		"wooden_axe",  # Item produit
 		1,  # Quantité
 		{Data.ResourcesName.WOOD: 5},  # Ressources nécessaires
@@ -57,7 +57,7 @@ func _initialize_recipes():
 	# Catégorie: Outils en fer
 	add_recipe(Recipe.new(
 		"iron_axe",
-		"Hache en Fer",
+		"Iron Axe",
 		"iron_axe",
 		1,
 		{Data.ResourcesName.WOOD: 2, Data.ResourcesName.IRON: 3},
@@ -67,7 +67,7 @@ func _initialize_recipes():
 	# Exemples d'autres recettes (à compléter)
 	add_recipe(Recipe.new(
 		"wooden_pickaxe",
-		"Pioche en Bois",
+		"Woode Pickaxe",
 		"wooden_pickaxe",
 		1,
 		{Data.ResourcesName.WOOD: 6},
@@ -76,7 +76,7 @@ func _initialize_recipes():
 	
 	add_recipe(Recipe.new(
 		"iron_pickaxe",
-		"Pioche en Fer",
+		"Iron Pickaxe",
 		"iron_pickaxe",
 		1,
 		{Data.ResourcesName.WOOD: 2, Data.ResourcesName.IRON: 4},
@@ -85,7 +85,7 @@ func _initialize_recipes():
 	
 	add_recipe(Recipe.new(
 		"iron_sword",
-		"Épée en Fer",
+		"Iron Sword",
 		"iron_sword",
 		1,
 		{Data.ResourcesName.WOOD: 1, Data.ResourcesName.IRON: 3},
@@ -94,7 +94,7 @@ func _initialize_recipes():
 	
 	add_recipe(Recipe.new(
 		"steel_sword",
-		"Épée en Acier",
+		"Steel Sword",
 		"steel_sword",
 		1,
 		{Data.ResourcesName.WOOD: 1, Data.ResourcesName.STEEL: 3},
@@ -103,7 +103,7 @@ func _initialize_recipes():
 	
 	add_recipe(Recipe.new(
 		"iron_armor",
-		"Armure en Fer",
+		"Iron Armor",
 		"iron_armor",
 		1,
 		{Data.ResourcesName.IRON: 8},
@@ -112,7 +112,7 @@ func _initialize_recipes():
 	
 	add_recipe(Recipe.new(
 		"wooden_shield",
-		"Bouclier en Bois",
+		"Wooden Shield",
 		"wooden_shield",
 		1,
 		{Data.ResourcesName.WOOD: 5, Data.ResourcesName.IRON: 1},

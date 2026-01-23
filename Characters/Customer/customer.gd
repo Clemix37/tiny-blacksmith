@@ -111,7 +111,7 @@ func serve_customer() -> bool:
 		# Retirer les items de l'inventaire
 		InventoryManager.remove_item(requested_recipe.id, quantity)
 		
-		label.text = "Merci !"
+		label.text = "Thx !"
 		await get_tree().create_timer(1.0).timeout
 		# Client satisfait
 		current_state = State.SERVED
@@ -125,7 +125,7 @@ func serve_customer() -> bool:
 		return true
 	else:
 		print("Pas assez d'items dans l'inventaire...")
-		label.text = "Pas assez..."
+		label.text = "Not enough..."
 		await get_tree().create_timer(1.0).timeout
 		label.text = requested_recipe.name.capitalize()
 		return false
