@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dswrln6d8x371"]
+[gd_scene load_steps=23 format=3 uid="uid://dswrln6d8x371"]
 
 [ext_resource type="PackedScene" uid="uid://chgybdvqjguat" path="res://Characters/Player/player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://ch7w4uyko35dd" path="res://Scenes/Game/counter.tscn" id="2_0xm2m"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cxid2xxwn0b06" path="res://Forge/forge.tscn" id="7_344ge"]
 [ext_resource type="PackedScene" uid="uid://eskxblvrckro" path="res://Scenes/Game/walls.tscn" id="10_wnnnj"]
 [ext_resource type="PackedScene" uid="uid://b42wur6t10st" path="res://UI/HUD/HUD.tscn" id="11_5fdju"]
+[ext_resource type="AudioStream" uid="uid://bmj2c84rsosfy" path="res://Assets/medieval-adventure.mp3" id="12_sw6w7"]
 
 [sub_resource type="Resource" id="Resource_xqoiw"]
 script = ExtResource("4_5fdju")
@@ -174,3 +175,7 @@ position = Vector2(818, 226)
 position = Vector2(0, -2)
 
 [node name="HUD" parent="." instance=ExtResource("11_5fdju")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_sw6w7")
+autoplay = true

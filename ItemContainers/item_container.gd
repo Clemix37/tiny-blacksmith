@@ -20,7 +20,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	# Si le joueur est dans la zone et qu'il reste des items
-	if playerInArea and item_container.quantity > 0:
+	if playerInArea and quantity > 0:
 		giveTimer += delta
 		
 		# Donner 1 item toutes les give_rate secondes
@@ -33,7 +33,7 @@ func _updateLabels() -> void:
 	
 func give_item_to_player():
 	# Pas de joueur ou plus de quantité
-	if !playerReference or item_container.quantity == 0: return
+	if !playerReference or quantity == 0: return
 	var resource: GameResource = item_container.game_resource
 	playerReference.add_to_inventory(resource.id, resource.name, 1)
 	item_container.remove_quantity(1)

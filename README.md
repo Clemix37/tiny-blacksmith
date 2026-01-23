@@ -1,7 +1,8 @@
 # Tiny-blacksmith
 
 Top-down game about buying resources to craft items that customers constantly come to buy.  
-Images are AI generated, whereas game icons are taken from this marvelous webiste called [Game Icons](https://game-icons.net/).
+Images are AI generated, whereas game icons are taken from this marvelous webiste called [Game Icons](https://game-icons.net/).  
+Thanks to [Melodigne M](https://pixabay.com/fr/users/melodigne-33374195/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=154671) for the music track !
 
 ## Game Menu
 
