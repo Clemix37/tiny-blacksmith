@@ -79,6 +79,10 @@ metadata/_custom_type_script = "uid://04v11heeij0i"
 z_index = 99
 position = Vector2(573, 335)
 
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+limit_smoothed = true
+position_smoothing_enabled = true
+
 [node name="Counter" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(0, 128)
 
