@@ -13,7 +13,7 @@ var quantity: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	quantity = ContainersManager.get_container_quantity(item_container.id_container)
+	_update_quantity()
 	_updateLabels()
 	areaDetection.body_entered.connect(_on_body_entered)
 	areaDetection.body_exited.connect(_on_body_exited)
@@ -37,8 +37,12 @@ func give_item_to_player():
 	var resource: GameResource = item_container.game_resource
 	playerReference.add_to_inventory(resource.id, resource.name, 1)
 	item_container.remove_quantity(1)
+	_update_quantity()
 	_updateLabels()
 	spawn_pickup_effect()
+
+func _update_quantity() -> void:
+	quantity = ContainersManager.get_container_quantity(item_container.id_container)
 
 func _on_body_entered(body):
 	if body.name == "Player" and body.has_method("add_to_inventory"):

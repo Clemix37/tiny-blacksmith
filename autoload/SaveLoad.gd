@@ -24,4 +24,4 @@ func load():
 	
 	InventoryManager.money = saved_sata.get("money", Data.moneyToStart)
 	InventoryManager.load_inventory_saved(saved_sata.get("inventory", {}))
-	ContainersManager.containers = saved_sata.get("containers", {})
+	ContainersManager.load_containers_saved(saved_sata.get("containers", {}))

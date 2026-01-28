@@ -15,3 +15,7 @@ func add_quantity(id_container: String, nb_to_add: int) -> void:
 	if !containers.has(id_container):
 		containers[id_container] = 0
 	containers[id_container] += nb_to_add
+
+func load_containers_saved(saved_containers: Dictionary) -> void:
+	for key in saved_containers.keys():
+		containers[key] = saved_containers[key] if saved_containers[key] >= 0 else 0
