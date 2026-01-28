@@ -352,8 +352,7 @@ z_index = 2
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-visible = false
-position = Vector2(177, 122)
+position = Vector2(177, 127)
 shape = SubResource("CircleShape2D_88ku4")
 
 [node name="Label" type="Label" parent="InteractionArea"]
