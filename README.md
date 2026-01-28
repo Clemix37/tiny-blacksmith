@@ -2,12 +2,13 @@
 
 Top-down game about buying resources to craft items that customers constantly come to buy.  
 Images are AI generated, whereas game icons are taken from this marvelous webiste called [Game Icons](https://game-icons.net/).  
-Thanks to [Melodigne M](https://pixabay.com/fr/users/melodigne-33374195/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=154671) for the music track !
+Thanks to [Vladimir Visic](https://pixabay.com/users/lvbratija-42171567/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=463719) for the music track !
 
 ## Play it on web
 
 For those of you wanting to test out the game, here's the [link to play](https://clemix37.github.io/tiny-blacksmith/).  
-Feel free to give me some feedback about the game, how you play it, bugs you saw...
+Feel free to give me some feedback about the game, how you play it, bugs you saw...  
+[My itch.io](https://cyberwebdev.itch.io/)
 
 ## Local installation
 
@@ -22,12 +23,6 @@ If you're concerned about running the .exe file locally try uploading it on Viru
 ## Delivery
 
 ![Delivery](Assets/Images/shpping-bg.png)
-
-## Development
-
-Maybe to do
-
-- [ ] missions system / goals (serve 2 clients / create twice the recipe X)  
 
 ## Thanks
 
