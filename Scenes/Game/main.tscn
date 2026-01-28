@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cxid2xxwn0b06" path="res://Forge/forge.tscn" id="7_344ge"]
 [ext_resource type="PackedScene" uid="uid://eskxblvrckro" path="res://Scenes/Game/walls.tscn" id="10_wnnnj"]
 [ext_resource type="PackedScene" uid="uid://b42wur6t10st" path="res://UI/HUD/HUD.tscn" id="11_5fdju"]
-[ext_resource type="AudioStream" uid="uid://bmj2c84rsosfy" path="res://Assets/medieval-adventure.mp3" id="12_sw6w7"]
+[ext_resource type="AudioStream" uid="uid://cdyvdqnr6dsua" path="res://Assets/medieval-quiet-shore.mp3" id="12_sw6w7"]
 
 [sub_resource type="Resource" id="Resource_xqoiw"]
 script = ExtResource("4_5fdju")
